@@ -31,4 +31,7 @@ Il existe 16 réseaux internes + celui du prof + le réseau 0.0.0.0 +le réseau 
 | 192.168.176.0/24 | 10.250.0.254 |    1 |
 | 0.0.0.0/0 | 10.250.0.254 |    1 |
 
+### Question 2
+Expliquer en 4 lignes le rôle du protocole VRRP qui sera mis en place dans les routeurs.
+
 
