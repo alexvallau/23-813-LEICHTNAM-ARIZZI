@@ -14,7 +14,7 @@ Il existe 16 réseaux internes + celui du prof + le réseau 0.0.0.0 +le réseau 
 #### Tables de routage 
 #### R1
 
-| Tables   |      Are      |  Cool |
+| Destination   |      Passerelles      |  Coût |
 |----------|:-------------:|------:|
 | col 1 is |  left-aligned | $1600 |
 | col 2 is |    centered   |   $12 |
