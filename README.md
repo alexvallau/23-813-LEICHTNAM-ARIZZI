@@ -1,7 +1,7 @@
-# 23-813-LEICHTNAM-ARIZZI
+### 23-813-LEICHTNAM-ARIZZI
 Projet supervision
 
-### Etude théorique préparatoire
+## Etude théorique préparatoire
 
 # Question 1 
 Combien de lignes doivent être, théoriquement, présentes dans votre table de routage
