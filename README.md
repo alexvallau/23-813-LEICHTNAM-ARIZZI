@@ -48,3 +48,4 @@ Le protocole VRRP permet de répondre au besoin de haute disponibilité. Pour ce
 
 ### Réponse 4
 
+
