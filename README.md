@@ -52,3 +52,12 @@ Justifier entre autres que l’utilisation du routage statique n’aurait pas é
 Dans ce réseau, OSPF a pour mission de définir les itinéraires les plus efficaces pour le transit des paquets au sein du réseau. Dans notre contexte, OSPF actualise les tables de routage des routeurs dans l'aire OSPF en évaluant les coûts associés à chaque chemin. Le chemin avec le coût le plus bas est considéré comme le plus rapide pour atteindre le réseau de destination.
 
 Le recours au routage statique serait inapproprié en raison du nombre élevé de réseaux et de routeurs. Configurer le routage statique sur l'ensemble des routeurs aurait été contraignant et laborieux. De plus, grâce à l'utilisation de VRRP, l'intégration d'OSPF permet une mise à jour automatique des tables de routage en cas de défaillance d'un lien, assurant ainsi une haute disponibilité du réseau.
+
+
+
+### Question 5
+Rédiger les tests que vous mettrez en œuvre à la fin de cette étape pour valider le
+fonctionnement du réseau. L’objectif est d’écrire le moins de tests possibles pour tester le plus de
+fonctionnalités possibles.
+
+### Réponse 5
