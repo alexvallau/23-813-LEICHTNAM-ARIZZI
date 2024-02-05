@@ -45,7 +45,10 @@ Expliquer le fonctionnement de VRRP qui permet aux machines A et B d’utiliser 
 Le protocole VRRP permet de répondre au besoin de haute disponibilité. Pour cela, les routeurs s'envoient entre eux des annonces pour signaler leurs disponibilités. Si le routeur maître, à savoir, le routeur principal est défaillant, alors le routeur esclave/secondaire prendra le rôle de maître. Ce qui permettra la haute disponibilité, c'est à dire une communication sans interruption en cas de défaillance.
 
 ### Question 4
+Expliquer en quelques lignes le rôle du protocole OSPF dans le réseau ci-dessus.
+Justifier entre autres que l’utilisation du routage statique n’aurait pas été pertinente.
 
 ### Réponse 4
+Dans ce réseau, OSPF a pour mission de définir les itinéraires les plus efficaces pour le transit des paquets au sein du réseau. Dans notre contexte, OSPF actualise les tables de routage des routeurs dans l'aire OSPF en évaluant les coûts associés à chaque chemin. Le chemin avec le coût le plus bas est considéré comme le plus rapide pour atteindre le réseau de destination.
 
-
+Le recours au routage statique serait inapproprié en raison du nombre élevé de réseaux et de routeurs. Configurer le routage statique sur l'ensemble des routeurs aurait été contraignant et laborieux. De plus, grâce à l'utilisation de VRRP, l'intégration d'OSPF permet une mise à jour automatique des tables de routage en cas de défaillance d'un lien, assurant ainsi une haute disponibilité du réseau.
