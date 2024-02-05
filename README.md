@@ -34,4 +34,17 @@ Il existe 16 réseaux internes + celui du prof + le réseau 0.0.0.0 +le réseau 
 ### Question 2
 Expliquer en 4 lignes le rôle du protocole VRRP qui sera mis en place dans les routeurs.
 
+### Réponse 2
 VRRP (Virtual Router Redundancy Protocol) est un protocole dont le but est d'augmenter la disponibilité de la passerelle par défaut des hôtes d'un même réseau. Dans notre cas, il permet de définir une seule adresse IP virtuelle comme passerelle par défaut référençant nos deux routeurs pour les hôtes de notre réseau.
+
+### Question 3 
+Expliquer le fonctionnement de VRRP qui permet aux machines A et B d’utiliser le
+« bon » routeur. Comment fonctionne ce mécanisme lorsque le routeur utilisé devient défaillant ?
+
+### Réponse 3 
+Le protocole VRRP permet de répondre au besoin de haute disponibilité. Pour cela, les routeurs s'envoient entre eux des annonces pour signaler leurs disponibilités. Si le routeur maître, à savoir, le routeur principal est défaillant, alors le routeur esclave/secondaire prendra le rôle de maître. Ce qui permettra la haute disponibilité, c'est à dire une communication sans interruption en cas de défaillance.
+
+### Question 4
+
+### Réponse 4
+
