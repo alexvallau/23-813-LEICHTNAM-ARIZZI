@@ -13,7 +13,6 @@ Il existe 16 réseaux internes + celui du prof + le réseau 0.0.0.0 +le réseau 
 
 #### Tables de routage 
 #### R1
-
 | Destination   |      Passerelles      |  Coût |
 |----------|:-------------:|------:|
 | 10.X.Y.0/24 |  DC | 0 |
@@ -21,5 +20,15 @@ Il existe 16 réseaux internes + celui du prof + le réseau 0.0.0.0 +le réseau 
 | 192.168.140.0/23 | 10.250.0.253 |    1 |
 | 192.168.176.0/24 | 10.250.0.254 |    1 |
 | 0.0.0.0/0 | 10.250.0.253 |    1 |
+
+#### R2
+
+| Destination   |      Passerelles      |  Coût |
+|----------|:-------------:|------:|
+| 10.X.Y.0/24 |  DC | 0 |
+| 10.250.0.0/24 |    DC   |   0 |
+| 192.168.140.0/23 | 10.250.0.253 |    1 |
+| 192.168.176.0/24 | 10.250.0.254 |    1 |
+| 0.0.0.0/0 | 10.250.0.254 |    1 |
 
 
