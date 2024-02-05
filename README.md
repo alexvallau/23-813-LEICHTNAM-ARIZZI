@@ -16,6 +16,10 @@ Il existe 16 réseaux internes + celui du prof + le réseau 0.0.0.0 +le réseau 
 
 | Destination   |      Passerelles      |  Coût |
 |----------|:-------------:|------:|
-| col 1 is |  left-aligned | $1600 |
-| col 2 is |    centered   |   $12 |
-| col 3 is | right-aligned |    $1 |
+| 10.X.Y.0/24 |  DC | 0 |
+| 10.250.0.0/24 |    DC   |   0 |
+| 192.168.140.0/23 | 10.250.0.253 |    1 |
+| 192.168.176.0/24 | 10.250.0.254 |    1 |
+| 0.0.0.0/0 | 10.250.0.253 |    1 |
+
+
