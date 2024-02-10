@@ -42,7 +42,9 @@ _Expliquer le fonctionnement de VRRP qui permet aux machines A et B d’utiliser
 « bon » routeur. Comment fonctionne ce mécanisme lorsque le routeur utilisé devient défaillant ?_
 
 ### Réponse 3 
-Le protocole VRRP permet de répondre au besoin de haute disponibilité. Pour cela, les routeurs s'envoient entre eux des annonces pour signaler leurs disponibilités. Si le routeur maître, à savoir, le routeur principal est défaillant, alors le routeur esclave/secondaire prendra le rôle de maître. Ce qui permettra la haute disponibilité, c'est à dire une communication sans interruption en cas de défaillance.
+Commençons de manière descriptive. Nos 2 routeurs ont 2 adresses IP différentes. Lorsque ils sont configurés avec le protocole VRRP, une nouvelle interface dite "virtuelle" est créee. Cette interface, comme toutes les interfaces contient 2 informations: 
+*Une adresse MAC virtuelle unique et différente des vraies adresses MAC de nos routeurs.
+*Une adresse IP virtuelle, qui peut être simmilaire à l'une des ip de nos routeurs. Nos routeurs, vont donc faire partie de cette nouvelle interface virtuelle. 
 
 #### Question 4
 _Expliquer en quelques lignes le rôle du protocole OSPF dans le réseau ci-dessus.
