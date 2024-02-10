@@ -43,8 +43,8 @@ _Expliquer le fonctionnement de VRRP qui permet aux machines A et B d’utiliser
 
 ### Réponse 3 
 Commençons de manière descriptive. Nos 2 routeurs ont 2 adresses IP différentes. Lorsque ils sont configurés avec le protocole VRRP, une nouvelle interface dite "virtuelle" est créee. Cette interface, comme toutes les interfaces contient 2 informations: 
-*Une adresse MAC virtuelle unique et différente des vraies adresses MAC de nos routeurs.
-*Une adresse IP virtuelle, qui peut être simmilaire à l'une des ip de nos routeurs. Nos routeurs, vont donc faire partie de cette nouvelle interface virtuelle. 
+* Une adresse MAC virtuelle unique et différente des vraies adresses MAC de nos routeurs.
+* Une adresse IP virtuelle, qui peut être simmilaire à l'une des ip de nos routeurs. Nos routeurs, vont donc faire partie de cette nouvelle interface virtuelle. 
 
 #### Question 4
 _Expliquer en quelques lignes le rôle du protocole OSPF dans le réseau ci-dessus.
