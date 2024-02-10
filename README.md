@@ -45,18 +45,19 @@ _Expliquer le fonctionnement de VRRP qui permet aux machines A et B d’utiliser
 Commençons de manière simple et descriptive. Nos 2 routeurs ont 2 adresses IP différentes. Lorsqu'ils sont configurés avec le protocole VRRP, une nouvelle interface dite "virtuelle" est créée. Cette interface, comme toutes les interfaces, contient 2 informations :
 
 * Une adresse MAC virtuelle unique et différente des vraies adresses MAC de nos routeurs.
-* Une adresse IP virtuelle, qui peut être similaire à l'une des IPs de nos routeurs. Nos routeurs vont donc faire partie de cette nouvelle interface virtuelle.
+* Une adresse IP virtuelle, qui peut être similaire à l'une des IPs de nos routeurs.
+
+Nos routeurs vont donc faire partie de cette nouvelle interface virtuelle.\\
 
 Le protocole VRRP fonctionne sous le modèle maître-esclave, que l'on peut paramétrer selon nos désirs en donnant une priorité à nos routeurs. Le routeur avec la priorité la plus haute sera le maître. De manière régulière, il annoncera aux autres routeurs de son cluster qu'il est bien fonctionnel et qu'il gère l'IP virtuelle.
 
-À ce propos, c'est bien évidemment lui qui répondra aux requêtes ARP des différents clients, en envoyant la MAC virtuelle au client qui l'a demandée.
-
-1. Si mon client A demande : "À quelle MAC correspond l'adresse IP virtuelle ?"
+À ce propos, c'est bien évidemment lui qui répondra aux requêtes ARP des différents clients(voir RFC3768 section "host ARP requests"), en envoyant la MAC virtuelle au client qui l'a demandée.
+1. Si mon client A demande via ARP : "À quelle MAC correspond l'adresse IP virtuelle ?"
 2. Le routeur maître répondra : "L'adresse IP virtuelle correspond à la MAC virtuelle de mon cluster."
 
-Si un routeur n'envoie plus d'informations sur l'état de ses liens, ou même plus d'informations du tout, alors un processus de sélection d'un nouveau maître est mis en place. Comme déjà énoncé, le routeur avec la plus haute priorité (voire même avec la plus haute IP selon les modèles) est choisi comme nouveau routeur maître. Ce nouveau maître annoncera ainsi à ses pairs son état de fonctionnement.
+Si un routeur n'envoie plus d'informations sur l'état de ses liens, ou même plus d'informations du tout, alors un processus de sélection d'un nouveau maître est mis en place. Comme déjà énoncé, le routeur avec la plus haute priorité (voire même avec la plus haute IP selon les modèles) est choisi comme nouveau routeur maître. Ce nouveau maître annoncera à son tour, à ses paires, son état de fonctionnement.
 
-Ainsi, A et B ne "choisissent" pas le bon routeur. Du point de vue de ces clients, il n'existe qu'une seule entité de routage. C'est par les différentes mécaniques expliquées ci-dessus que les routeurs échangent intelligemment leurs rôles, d'esclave à maître.
+Ainsi, A et B ne "choisissent" pas le bon routeur. Du point de vue de ces clients, il n'existe qu'une seule entité de routage, la virtuelle. C'est par les différentes mécaniques expliquées ci-dessus que les routeurs échangent intelligemment leurs rôles, passant d'esclave à maître et assurant une redondance des liens.
 
 
 #### Question 4
