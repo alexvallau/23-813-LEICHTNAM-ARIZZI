@@ -252,6 +252,24 @@ VRRP par rapport à mib-2._
 
 ### Réponse 12
 
+ vrrpMIB  MODULE-IDENTITY
+     LAST-UPDATED "200003030000Z"
+     ORGANIZATION "IETF VRRP Working Group"
+     CONTACT-INFO
+            "Brian R. Jewell
+     Postal: Copper Mountain Networks, Inc.
+             2470 Embarcadero Way
+             Palo Alto, California 94303
+     Tel:    +1 650 687 3367
+     E-Mail: bjewell@coppermountain.com"
+
+     DESCRIPTION
+         "This MIB describes objects used for managing Virtual Router
+          Redundancy Protocol (VRRP) routers."
+     REVISION "200003030000Z"    -- 03 Mar 2000
+     DESCRIPTION "Initial version as published in RFC 2787."
+     ::= { mib-2 68 }
+
 
 
  
