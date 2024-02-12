@@ -1,1 +1,7 @@
+Question 8 : Rédiger les tests mis en œuvre pour valider le fonctionnement du réseau. Ici les tests
+demandés doivent permettre de vérifier de manière exhaustive le fonctionnement de VRRP et aussi de
+l’ensemble des mécanismes assurant de la haute disponibilité. Ainsi, les tests sont un moyen de mieux
+comprendre le fonctionnement du réseau et de valider les résultats de l’étude théorique
+
+Réponse 8 :
 
