@@ -185,6 +185,23 @@ PING 10.100.4.5 (10.100.4.5) 56(84) octets de données.
 ```
 
 
+##  Supervision et métrologie avec SNMP
+
+#### Question 9
+_Relever les commandes saisies dans un des routeurs pour la mise en place de
+SNMPv3. Relever la commande snmpget saisie pour récupérer l’objet syslocation._
+
+#### Réponse 9
+
+```python
+snmp-server group snmpv3group v3 priv
+snmp-server user snmpuser snmpv3group v3 auth sha auth_pass priv aes 128 crypt_pass
+snmp-server location "pm19"
+snmp-server contact "leichtnam"
+```
+
+
+
 
 
 
