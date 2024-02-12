@@ -5,6 +5,18 @@ comprendre le fonctionnement du réseau et de valider les résultats de l’étu
 
 Réponse 8 :
 
+Test de basculement :
+
+Pour tester le basculement des routeur ce qu'on peux faire c'est désactiver l'interface du routeur maitre. 
+
+Routeur1 (maitre) :
+
+interface GigabitEthernet2
+ ip address 10.100.4.1 255.255.255.0
+ shutdown
+
+
+
 
 
 
@@ -28,3 +40,4 @@ interface GigabitEthernet2
  vrrp 1 ip 10.100.4.5
  vrrp 1 priority 150
 
+snmp-server user snmpuser snmpv3group v3 auth sha auth_pass priv aes 128 crypt_pass
