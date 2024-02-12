@@ -263,10 +263,9 @@ VRRP par rapport à mib-2._
              Palo Alto, California 94303
      Tel:    +1 650 687 3367
      E-Mail: bjewell@coppermountain.com"
-
      DESCRIPTION
          This MIB describes objects used for managing Virtual Router
-          Redundancy Protocol (VRRP) routers."
+          Redundancy Protocol (VRRP) routers.
      REVISION "200003030000Z"    -- 03 Mar 2000
      DESCRIPTION "Initial version as published in RFC 2787.
      ::= { mib-2 68 }```
