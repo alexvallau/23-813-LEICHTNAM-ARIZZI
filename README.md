@@ -106,7 +106,7 @@ Pour l'instant, nous avons configuré les machines R1 Et client A. Afin d'être 
 
 Nous avons regardé la table de routage reçue par OSPF
   
-```
+``` bash
 R1#show ip route ospf
 O*E2  0.0.0.0/0 [110/10] via 10.250.0.254, 00:54:58, GigabitEthernet3
                 [110/10] via 10.250.0.253, 5d20h, GigabitEthernet3
