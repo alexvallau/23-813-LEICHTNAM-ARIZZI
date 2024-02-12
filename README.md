@@ -77,3 +77,21 @@ fonctionnement du réseau. L’objectif est d’écrire le moins de tests possib
 fonctionnalités possibles._
 
 #### Réponse 5
+Pour l'instant, nous avons configuré les machines R1 Et client A. Afin d'être au plus clair sur les tests, nous presenterons les tests à effectuer par machine.
+\\
+* Machine A :
+  IP: 10.100.4.3/24
+  De machine A vers Routeur R1: On ping l'interface du routeur.
+
+* Routeur R1
+  * Interface loopback0 : 10.10.4.1
+  * Interface GigabitEthernet1: DHCP(Interface de gestion de réseau)
+  * Interface GigabitEthernet2(Interface réseau interne): 10.100.4.1
+    * Ping de R1 vers R2
+    * Ping de R1 vers Client A
+  * Interface GigabitEthernet3(Interface réseau côté prof): 10.250.0.7
+    * Ping de R1 vers 10.250.0.253(Réussi)
+    * Ping de R1 vers 10.250.0.254(Réussi)
+
+  
+
