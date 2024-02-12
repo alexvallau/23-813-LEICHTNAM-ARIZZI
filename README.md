@@ -31,7 +31,7 @@ Il existe 16 réseaux internes (vue dans le tableau) + celui du prof + le résea
 | 192.168.176.0/24 | 10.250.0.254 |    1 |
 | 0.0.0.0/0 | 10.250.0.254 |    1 |
 
-Ces routes nous semblaient importantes car elles ne font pas partie des réseaux internes étudiants. Nous avons représenté ces réseaux par 
+Ces routes nous semblaient importantes car elles ne font pas partie des réseaux internes étudiants. Nous avons représenté ces réseaux 
 
 #### Question 2
 _Expliquer en 4 lignes le rôle du protocole VRRP qui sera mis en place dans les routeurs._
