@@ -208,6 +208,15 @@ SNMPv2-MIB::sysLocation.0 = STRING: "pm19"
 SNMPv2-MIB::sysContact.0 = STRING: "leichtnam"
 ```
 
+### Question 10
+_Rappeler l’encodage utilisé lors de l’émission de données en SNMP._
+
+### Réponse 10
+ L'encodage utilisé est BER. Cet encodage intervient lors de la mise en trame des données SNMP.
+
+
+ 
+
 
 
 
