@@ -215,6 +215,43 @@ _Rappeler l’encodage utilisé lors de l’émission de données en SNMP._
  L'encodage utilisé est BER. Cet encodage intervient lors de la mise en trame des données SNMP.
 
 
+### Question 11
+_Capturer (inclure la transcription au format octet) la trame et sa réponse lorsque vous
+faites un SNMP-GET sur le MTU de la 2ème interface d’un de vos routeurs. Vérifier de manière
+exhaustive que cette trame correspond bien à la théorie vue en cours._
+
+### Réponse 11
+Sur le client A(10.100.4.3) nous avons éxécuté la commande (en sachant que l'ip de notre interface virtuelle VRRP est 10.100.4.5)
+``` python
+snmpget -v2c -c 123test123 10.100.4.5 ifMtu.2
+```
+Cette commande aurait également pu être:
+``` python
+snmpget -v2c -c 123test123 10.100.4.5 1.3.6.1.2.1.2.2.1.4.2
+``` 
+
+Nous avons ensuite initié une capture de trame du côté de notre client avec les résultats suivants:
+
+``` python
+[root@localhost ~]# tshark -i enp0s8  -f "udp"
+    1 0.000000000   10.100.4.3 → 10.100.4.5   SNMP 91 get-request 1.3.6.1.2.1.2.2.1.4.2
+    2 0.000979607   10.100.4.5 → 10.100.4.3   SNMP 93 get-response 1.3.6.1.2.1.2.2.1.4.2
+```  
+
+
+
+
+### Question 12 
+_Copier-coller la ligne du fichier de la MIB VRRP qui indique l’OID relatif de la branche
+VRRP par rapport à mib-2._
+
+### Réponse 12
+
+
+
+snmpget -v2c -c 123test123 10.100.4.5 ifMtu.2
+1.3.6.1.2.1.2.2.1.4.2
+
  
 
 
