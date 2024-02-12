@@ -11,7 +11,7 @@ de vos routeurs, une table de routage partielle qui contiendra 7 routes choisies
 #### Réponse 1
 Il existe 16 réseaux internes (vue dans le tableau) + celui du prof + le réseau 0.0.0.0 +le réseau externe qui interconnecte tous les routeurs + le réseau vlan 140 + le réseau vlan 176. Donc 16+1+1+1+1+1. Donc 21 sous réseaux.
 
-#### Tables de routage 
+#### Tables de routage partielles
 #### R1
 | Destination   |      Passerelles      |  Coût |
 |----------|:-------------:|------:|
@@ -30,6 +30,8 @@ Il existe 16 réseaux internes (vue dans le tableau) + celui du prof + le résea
 | 192.168.140.0/23 | 10.250.0.253 |    1 |
 | 192.168.176.0/24 | 10.250.0.254 |    1 |
 | 0.0.0.0/0 | 10.250.0.254 |    1 |
+
+Ces routes nous semblaient importantes car elles ne font pas partie des réseaux internes étudiants. Nous avons représenté ces réseaux par 
 
 #### Question 2
 _Expliquer en 4 lignes le rôle du protocole VRRP qui sera mis en place dans les routeurs._
@@ -87,18 +89,17 @@ Pour l'instant, nous avons configuré les machines R1 Et client A. Afin d'être 
   * Interface loopback0 : 10.10.4.1
   * Interface GigabitEthernet1: DHCP(Interface de gestion de réseau)
   * Interface GigabitEthernet2(Interface réseau interne): 10.100.4.1
-    * Ping de R1 vers R2
-    * Ping de R1 vers Client A
+    * Ping de  10.100.4.1(R1) vers 10.100.4.2(R2)
+    * Ping de 10.100.4.1(R1) vers 10.100.4.3(Client A)
   * Interface GigabitEthernet3(Interface réseau côté prof): 10.250.0.7
-    * Ping de R1 vers 10.250.0.253(Réussi)
-    * Ping de R1 vers 10.250.0.254(Réussi)
+    * Ping de 10.250.0.7(R1) vers 10.250.0.253(Réussi)
+    * Ping de 10.250.0.8(R1) vers 10.250.0.254(Réussi)
    
   #### Question 6
   _Rédiger les tests que vous mettrez en œuvre à la fin de cette étape pour valider la fonctionnement du réseau._
 
   #### Réponse 6
-  Après avoir configuré OSPF sur notre routeur avec la configuration suivante
-  
+  Après avoir configuré OSPF sur notre routeur R1 avec la configuration suivante:
   ``` python
   router ospf 1
    router-id 10.10.4.1
@@ -106,7 +107,7 @@ Pour l'instant, nous avons configuré les machines R1 Et client A. Afin d'être 
    network 10.250.0.0 0.0.0.255 area 0 ```
 
 Nous avons regardé la table de routage reçue par OSPF
-  
+_Route OSPF reçue par R1:_
 ``` python
 R1#show ip route ospf
 O*E2  0.0.0.0/0 [110/10] via 10.250.0.254, 00:54:58, GigabitEthernet3
@@ -124,12 +125,26 @@ O        10.200.4.0/24 [110/2] via 10.250.0.108, 6d19h, GigabitEthernet3
 O        10.200.6.0/24 [110/2] via 10.250.0.112, 5d20h, GigabitEthernet3
 O     192.168.140.0/23 [110/101] via 10.250.0.253, 5d20h, GigabitEthernet3
 O     192.168.176.0/24 [110/101] via 10.250.0.254, 00:54:58, GigabitEthernet3
-
 ```
+
+
 
 #### Question 7
 _Relever les commandes saisies pour la configuration de VRRP._
 
 #### Réponse 7
+``` python
+* Routeur R1
+R1(config-if)#vrrp 1 ip 10.100.4.5
+R1(config-if)#vrrp 1 prio
+R1(config-if)#vrrp 1 priority 150
+
+* Routeur R2
+R2(config-if)#vrrp 1 ip 10.100.4.5
+R2(config-if)#vrrp 1 prio
+R2(config-if)#vrrp 1 priority 100
+```
+
+
 
 
