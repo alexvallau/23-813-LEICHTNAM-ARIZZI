@@ -174,12 +174,13 @@ GigabitEthernet2 - Group 1
 ```
 En faisant un show vrrp, on voit que le routeur est devenu le routeur maitre.
 En faisant un ping depuis Client B vers l'adresse virtuelle 10.100.4.5, et qu'on coupe l'interface du routeur maitre(R1) on voit que le routeur esclave prend le relais car le ping ne se coupe pas.
-
+```python
 PING 10.100.4.5 (10.100.4.5) 56(84) octets de données.
 64 octets de 10.100.4.5 : icmp_seq=1 ttl=255 temps=0.703 ms
 64 octets de 10.100.4.5 : icmp_seq=2 ttl=255 temps=0.616 ms
 64 octets de 10.100.4.5 : icmp_seq=3 ttl=255 temps=0.726 ms
 64 octets de 10.100.4.5 : icmp_seq=4 ttl=255 temps=0.600 ms
+```
 
 
 
