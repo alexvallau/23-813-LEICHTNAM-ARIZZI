@@ -145,6 +145,43 @@ R2(config-if)#vrrp 1 prio
 R2(config-if)#vrrp 1 priority 100
 ```
 
+##### Question 8
+Test de basculement :
+
+Pour tester le basculement des routeurs, nous avons désactivé sur R1 (routeur maître) l'interface connectée au réseau interne.
+
+Routeur1 (maître) :
+``` python
+R1# Show running-conf
+interface GigabitEthernet2
+ ip address 10.100.4.1 255.255.255.0
+ shutdown
+``` 
+
+Une fois l'interface déconnecteée, le routeur2 qui est esclave va prendre le relais en tant que routeur maitre.
+``` python
+R2#show vrrp
+GigabitEthernet2 - Group 1
+  State is Backup
+  Virtual IP address is 10.100.4.5
+  Virtual MAC address is 0000.5e00.0101
+  Advertisement interval is 1.000 sec
+  Preemption enabled
+  Priority is 100
+  Master Router is 10.100.4.1, priority is 150
+  Master Advertisement interval is 1.000 sec
+  Master Down interval is 3.609 sec (expires in 3.605 sec)
+```
+En faisant un show vrrp, on voit que le routeur est devenu le routeur maitre.
+En faisant un ping depuis Client B vers l'adresse virtuelle 10.100.4.5, et qu'on coupe l'interface du routeur maitre(R1) on voit que le routeur esclave prend le relais car le ping ne se coupe pas.
+
+PING 10.100.4.5 (10.100.4.5) 56(84) octets de données.
+64 octets de 10.100.4.5 : icmp_seq=1 ttl=255 temps=0.703 ms
+64 octets de 10.100.4.5 : icmp_seq=2 ttl=255 temps=0.616 ms
+64 octets de 10.100.4.5 : icmp_seq=3 ttl=255 temps=0.726 ms
+64 octets de 10.100.4.5 : icmp_seq=4 ttl=255 temps=0.600 ms
+
+
 
 
 
