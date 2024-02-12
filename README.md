@@ -92,6 +92,19 @@ Pour l'instant, nous avons configuré les machines R1 Et client A. Afin d'être 
   * Interface GigabitEthernet3(Interface réseau côté prof): 10.250.0.7
     * Ping de R1 vers 10.250.0.253(Réussi)
     * Ping de R1 vers 10.250.0.254(Réussi)
+   
+  #### Question 6
+  _Rédiger les tests que vous mettrez en œuvre à la fin de cette étape pour valider la fonctionnement du réseau._
+
+  #### Réponse 6
+  Après avoir configuré OSPF sur notre routeur avec la configuration suivante
+  
+  ```router ospf 1
+   router-id 10.10.4.1
+   network 10.100.4.0 0.0.0.255 area 0
+   network 10.250.0.0 0.0.0.255 area 0```
+
+  
 
   
 
