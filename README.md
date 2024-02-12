@@ -99,7 +99,8 @@ Pour l'instant, nous avons configuré les machines R1 Et client A. Afin d'être 
   #### Réponse 6
   Après avoir configuré OSPF sur notre routeur avec la configuration suivante
   
-  ``` router ospf 1
+  ``` python
+  router ospf 1
    router-id 10.10.4.1
    network 10.100.4.0 0.0.0.255 area 0
    network 10.250.0.0 0.0.0.255 area 0 ```
