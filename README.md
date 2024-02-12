@@ -49,7 +49,7 @@ Commençons de manière simple et descriptive. Nos 2 routeurs ont 2 adresses IP 
 * Une adresse MAC virtuelle unique et différente des vraies adresses MAC de nos routeurs.
 * Une adresse IP virtuelle, qui peut être similaire à l'une des IPs de nos routeurs.
 
-Nos routeurs vont donc faire partie de cette nouvelle interface virtuelle.\\
+Nos routeurs vont donc faire partie de cette nouvelle interface virtuelle. Ce qui veut dire que les interfaces de nos routeurs, vont être connectées à cette nouvelle interface virtuelle.\\
 
 Le protocole VRRP fonctionne sous le modèle maître-esclave, que l'on peut paramétrer selon nos désirs en donnant une priorité à nos routeurs. Le routeur avec la priorité la plus haute sera le maître. De manière régulière, il annoncera aux autres routeurs de son cluster qu'il est bien fonctionnel et qu'il gère l'IP virtuelle.
 
