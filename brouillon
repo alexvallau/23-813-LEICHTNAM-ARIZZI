@@ -5,3 +5,26 @@ comprendre le fonctionnement du réseau et de valider les résultats de l’étu
 
 Réponse 8 :
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+---------------------------------------------------------------------------------------------------------------------------------------
+
+interface GigabitEthernet2
+ ip address 10.100.4.1 255.255.255.0
+ shutdown
+ negotiation auto
+ vrrp 1 ip 10.100.4.5
+ vrrp 1 priority 150
+
