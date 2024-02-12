@@ -236,8 +236,13 @@ Nous avons ensuite initié une capture de trame du côté de notre client avec l
 [root@localhost ~]# tshark -i enp0s8  -f "udp"
     1 0.000000000   10.100.4.3 → 10.100.4.5   SNMP 91 get-request 1.3.6.1.2.1.2.2.1.4.2
     2 0.000979607   10.100.4.5 → 10.100.4.3   SNMP 93 get-response 1.3.6.1.2.1.2.2.1.4.2
-```  
+```
+Comme vu dans le cours, la commande get permet de récupérer la valeur de l'oid indiqué dans la commande. 
+Il est donc donc normal de recevoir la même valeur de l'oid, avec la valeur en plus.
 
+
+snmpget -v2c -c 123test123 10.100.4.5 ifMtu.2
+1.3.6.1.2.1.2.2.1.4.2
 
 
 
@@ -248,9 +253,6 @@ VRRP par rapport à mib-2._
 ### Réponse 12
 
 
-
-snmpget -v2c -c 123test123 10.100.4.5 ifMtu.2
-1.3.6.1.2.1.2.2.1.4.2
 
  
 
