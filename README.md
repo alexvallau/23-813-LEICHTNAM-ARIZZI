@@ -99,12 +99,30 @@ Pour l'instant, nous avons configuré les machines R1 Et client A. Afin d'être 
   #### Réponse 6
   Après avoir configuré OSPF sur notre routeur avec la configuration suivante
   
-  ```router ospf 1
+  ``` router ospf 1
    router-id 10.10.4.1
    network 10.100.4.0 0.0.0.255 area 0
-   network 10.250.0.0 0.0.0.255 area 0```
+   network 10.250.0.0 0.0.0.255 area 0 ```
 
+Nous avons regardé la table de routage reçue par OSPF
   
+```
+R1#show ip route ospf
+O*E2  0.0.0.0/0 [110/10] via 10.250.0.254, 00:54:58, GigabitEthernet3
+                [110/10] via 10.250.0.253, 5d20h, GigabitEthernet3
+      10.0.0.0/8 is variably subnetted, 13 subnets, 2 masks
+O        10.10.2.1/32 [110/2] via 10.250.0.3, 00:38:20, GigabitEthernet3
+O        10.10.2.2/32 [110/2] via 10.250.0.4, 00:00:31, GigabitEthernet3
+O        10.100.1.0/24 [110/2] via 10.250.0.2, 00:22:23, GigabitEthernet3
+O        10.100.2.0/24 [110/2] via 10.250.0.4, 00:00:31, GigabitEthernet3
+                       [110/2] via 10.250.0.3, 00:38:20, GigabitEthernet3
+O        10.100.5.0/24 [110/2] via 10.250.0.9, 00:17:30, GigabitEthernet3
+O        10.200.3.0/24 [110/2] via 10.250.0.105, 00:42:14, GigabitEthernet3
+O        10.200.4.0/24 [110/2] via 10.250.0.108, 6d19h, GigabitEthernet3
+                       [110/2] via 10.250.0.107, 6d19h, GigabitEthernet3
+O        10.200.6.0/24 [110/2] via 10.250.0.112, 5d20h, GigabitEthernet3
+O     192.168.140.0/23 [110/101] via 10.250.0.253, 5d20h, GigabitEthernet3
+O     192.168.176.0/24 [110/101] via 10.250.0.254, 00:54:58, GigabitEthernet3
 
-  
+```
 
