@@ -74,3 +74,4 @@ IF-MIB::ifIndex.5 = INTEGER: 5
 IF-MIB::ifDescr.1 = STRING: GigabitEthernet1
 IF-MIB::ifDescr.2 = STRING: GigabitEthernet2
 
+sudo tshark -i <interface> -c 1 -Y "snmp && udp.port == 161" -x > capture_snmp.txt
