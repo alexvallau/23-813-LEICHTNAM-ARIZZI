@@ -127,3 +127,9 @@ O     192.168.176.0/24 [110/101] via 10.250.0.254, 00:54:58, GigabitEthernet3
 
 ```
 
+#### Question 7
+_Relever les commandes saisies pour la configuration de VRRP._
+
+#### Réponse 7
+
+
