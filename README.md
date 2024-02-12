@@ -193,13 +193,20 @@ SNMPv3. Relever la commande snmpget saisie pour récupérer l’objet syslocatio
 
 #### Réponse 9
 
-```python
+``` python
 snmp-server group snmpv3group v3 priv
 snmp-server user snmpuser snmpv3group v3 auth sha auth_pass priv aes 128 crypt_pass
 snmp-server location "pm19"
 snmp-server contact "leichtnam"
 ```
+En testant du client B vers le routeur 2:
 
+``` python
+[etudiant@localhost ~]$ snmpget -v 3 -l authPriv -u snmpuser -a SHA -A auth_pass -x AES -X crypt_pass 10.100.4.2 sysLocation.0
+SNMPv2-MIB::sysLocation.0 = STRING: "pm19"
+[etudiant@localhost ~]$ snmpget -v 3 -l authPriv -u snmpuser -a SHA -A auth_pass -x AES -X crypt_pass 10.100.4.2 sysContact.0
+SNMPv2-MIB::sysContact.0 = STRING: "leichtnam"
+```
 
 
 
