@@ -71,6 +71,8 @@ Dans ce réseau, OSPF a pour mission de définir les itinéraires les plus effic
 
 Le recours au routage statique serait inapproprié en raison du nombre élevé de réseaux et de routeurs qui sont interconnectés. Configurer le routage statique sur l'ensemble des routeurs aurait été contraignant et laborieux. De plus, grâce à l'utilisation de VRRP, l'intégration d'OSPF permet une mise à jour automatique des tables de routage en cas de défaillance d'un lien, assurant ainsi une haute disponibilité du réseau.
 
+Dans notre cas, l'intérêt d'OSPF est que si le routeur 1 ne fonctionne plus et qu'ont envoye un paquet depuis internet vers une de nos deux machines A ou B en passant par le routeur1 grace à OSPF le paquet envoyé pourra passer par le routeur 2 ce qui n'est pas le si on utilise un routage statique.
+
 ## Mise en place et configuration des machines virtuelles
 
 #### Question 5
