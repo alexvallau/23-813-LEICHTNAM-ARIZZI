@@ -240,10 +240,10 @@ Nous avons ensuite initié une capture de trame du côté de notre client avec l
 Comme vu dans le cours, la commande get permet de récupérer la valeur de l'oid indiqué dans la commande. 
 Il est donc donc normal de recevoir la même valeur de l'oid, avec la valeur en plus.
 
-
+``` python3
 snmpget -v2c -c 123test123 10.100.4.5 ifMtu.2
 1.3.6.1.2.1.2.2.1.4.2
-
+```
 
 
 ### Question 12 
@@ -254,10 +254,10 @@ VRRP par rapport à mib-2._
 
 ``` python
  vrrpMIB  MODULE-IDENTITY
-     LAST-UPDATED "200003030000Z"
+     LAST-UPDATED 200003030000Z
      ORGANIZATION "IETF VRRP Working Group"
      CONTACT-INFO
-            "Brian R. Jewell
+            Brian R. Jewell
      Postal: Copper Mountain Networks, Inc.
              2470 Embarcadero Way
              Palo Alto, California 94303
@@ -266,7 +266,7 @@ VRRP par rapport à mib-2._
      DESCRIPTION
          This MIB describes objects used for managing Virtual Router
           Redundancy Protocol (VRRP) routers.
-     REVISION "200003030000Z"    -- 03 Mar 2000
+     REVISION 200003030000Z    -- 03 Mar 2000
      DESCRIPTION "Initial version as published in RFC 2787.
      ::= { mib-2 68 }```
 
