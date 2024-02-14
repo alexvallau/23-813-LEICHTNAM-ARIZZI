@@ -81,7 +81,7 @@ fonctionnement du réseau. L’objectif est d’écrire le moins de tests possib
 fonctionnalités possibles._
 
 #### Réponse 5
-Pour l'instant, nous avons configuré les machines R1 Et client A. Afin d'être au plus clair sur les tests, nous presenterons les tests à effectuer par machine.
+Pour l'instant, nous avons configuré les machines R1 Et client A. Afin d'être au plus clair sur les tests, nous presenterons les tests à effectuer par machine et par interface.
 \\
 * Machine A :
   IP: 10.100.4.3/24
