@@ -268,7 +268,8 @@ VRRP par rapport à mib-2._
           Redundancy Protocol (VRRP) routers.
      REVISION 200003030000Z    -- 03 Mar 2000
      DESCRIPTION "Initial version as published in RFC 2787.
-     ::= { mib-2 68 } ```
+     ::= { mib-2 68 }
+```
 
 
 
