@@ -284,10 +284,22 @@ table. Relever dans la vrrpOperTable de R1 et expliquer les 8 premières colonne
 
 ### Réponse 14
 
+L'OID par rapport à la mib-2 de la table vrrpOperTable est .1.3.6.1.2.1.68.1.3
 
+ En tapant la commande
 
+ Nous obtenons les 8 colonnes suivantes:
+ ```python3
+ SNMPv2-SMI::mib-2.68.1.3.1.2.2.1 = Hex-STRING: 00 00 5E 00 01 01 #Adresse MAC de l'interface virtuelle
+SNMPv2-SMI::mib-2.68.1.3.1.3.2.1 = INTEGER: 3 #vrrpOperState    
+SNMPv2-SMI::mib-2.68.1.3.1.4.2.1 = INTEGER: 1 # vrrpOperAdminState        
+SNMPv2-SMI::mib-2.68.1.3.1.5.2.1 = INTEGER: 150 # vrrpOperPriority    
+SNMPv2-SMI::mib-2.68.1.3.1.6.2.1 = INTEGER: 1 # vrrpOperIpAddrCount: Nombre adresse ip associé à notre interface virtuelle, 0 et 1, soit 2 Ip   
+SNMPv2-SMI::mib-2.68.1.3.1.7.2.1 = IpAddress: 10.100.4.1 #IP Master
+SNMPv2-SMI::mib-2.68.1.3.1.8.2.1 = IpAddress: 10.100.4.5 # Ip de l'interface virtuelle
+SNMPv2-SMI::mib-2.68.1.3.1.9.2.1 = INTEGER: 1
+```
 
- 
 
 
 
