@@ -271,7 +271,12 @@ VRRP par rapport à mib-2._
      ::= { mib-2 68 }
 ```
 
+### Question 13
+_Pourquoi la première commande échoue alors que la deuxième réussie ?_
 
+### Réponse 13
+
+La deuxième commande échoue car l'OID spécifié, "vrrpMIB", n'est pas reconnu par le périphérique SNMP ciblé. En revanche, la première commande réussit car elle utilise un OID standard, "mib-2.68", qui fait partie du MIB-II et est pris en charge par la plupart des périphériques SNMP. Cela suggère que le périphérique ne supporte pas ou n'a pas activé la partie du MIB associée à "vrrpMIB".
 
  
 
