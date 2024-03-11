@@ -277,6 +277,16 @@ _Pourquoi la première commande échoue alors que la deuxième réussie ?_
 ### Réponse 13
 La première commande échoue car l'OID spécifié, "vrrpMIB", n'est pas reconnu par le périphérique SNMP ciblé. En revanche, la deuxième commande réussit car elle utilise un OID standard, "mib-2.68", qui fait partie du MIB-II et est pris en charge par la plupart des périphériques SNMP. Cela suggère que le périphérique ne supporte pas ou n'a pas activé la partie du MIB associée à "vrrpMIB".
 
+
+### Question 14
+_On s’intéresse à la table vrrpOperTable. Donner l’OID par rapport à mib-2 de cette
+table. Relever dans la vrrpOperTable de R1 et expliquer les 8 premières colonnes et comment est constitué l’index._
+
+### Réponse 14
+
+
+
+
  
 
 
