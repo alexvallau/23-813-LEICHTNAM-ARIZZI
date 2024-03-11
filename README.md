@@ -304,7 +304,7 @@ SNMPv2-SMI::mib-2.68.1.3.1.9.2.1 = INTEGER: 1
 ### Execution de iperf
 
 Nous obtenons les résultats suivants
-```python3
+``` python3
 [ ID] Interval           Transfer     Bitrate         Retr
 [  5]   0.00-10.00  sec  1.09 GBytes   941 Mbits/sec    0             sender
 [  5]   0.00-10.03  sec  1.09 GBytes   937 Mbits/sec                  receiver
@@ -334,7 +334,7 @@ Dans un premier temps, nous avons limité notre débit avec i perf à  500 Kbit/
 [  5]   0.00-10.00  sec   611 KBytes   500 Kbits/sec  0.015 ms  0/432 (0%)  receiver ```
  et dans la capture effectuée par wireshark, nous voyons entre autres:
 
-```python3
+``` python3
 
 [root@localhost etudiant]# capinfos /tmp/capture-500k.pcap
 File name:           /tmp/capture-500k.pcap
@@ -349,7 +349,8 @@ Capture duration:    9,545075832 seconds
 First packet time:   2024-03-11 14:55:25,971538993
 Last packet time:    2024-03-11 14:55:35,516614825
 Data byte rate:      64kBps
-Data bit rate:       515kbps ```
+Data bit rate:       515kbps
+```
 
 Iperf mesure le débit au niveau de la couche de transport (TCP ou UDP), tandis que capinfos mesure le débit au niveau des trames capturées, ce qui inclut les en-têtes de protocole, les encapsulations et éventuellement d'autres surcharges de protocole. Par conséquent, si les trames capturées incluent des en-têtes supplémentaires (par exemple, des en-têtes VLAN), cela peut augmenter légèrement le débit calculé par capinfos par rapport au débit mesuré par iperf.
 
