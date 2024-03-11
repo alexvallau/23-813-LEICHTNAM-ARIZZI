@@ -301,7 +301,17 @@ SNMPv2-SMI::mib-2.68.1.3.1.9.2.1 = INTEGER: 1
 ```
 
 
+### Question 15
+_Sur quel pare-feu avez-vous ajouté une exception ?_
 
+### Réponse 15
+Le parefeu sur lequel nous ajouté une exception est le parefeu de la machine B. Nous avons dû ouvrir le port 5001, qui est le port natif d'utilisation de iperf.
+
+### Question 16
+_Quel est le protocole de transport utilisé pour le test de débit entre les deux
+machines ?_
+
+### Réponse 16
 
 
 
