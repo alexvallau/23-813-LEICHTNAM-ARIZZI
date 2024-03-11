@@ -299,19 +299,28 @@ SNMPv2-SMI::mib-2.68.1.3.1.7.2.1 = IpAddress: 10.100.4.1 #IP Master
 SNMPv2-SMI::mib-2.68.1.3.1.8.2.1 = IpAddress: 10.100.4.5 # Ip de l'interface virtuelle
 SNMPv2-SMI::mib-2.68.1.3.1.9.2.1 = INTEGER: 1
 ```
+# Faire l'index
 
+### Execution de iperf
+
+Nous obtenons les résultats suivants
+```python3
+[ ID] Interval           Transfer     Bitrate         Retr
+[  5]   0.00-10.00  sec  1.09 GBytes   941 Mbits/sec    0             sender
+[  5]   0.00-10.03  sec  1.09 GBytes   937 Mbits/sec                  receiver```
+Ce qui représente comme débit de montée et de déscente à peu près 117 o/s
 
 ### Question 15
 _Sur quel pare-feu avez-vous ajouté une exception ?_
 
 ### Réponse 15
-Le parefeu sur lequel nous ajouté une exception est le parefeu de la machine B. Nous avons dû ouvrir le port 5001, qui est le port natif d'utilisation de iperf.
+Le parefeu sur lequel nous ajouté une exception est le parefeu de la machine B. Nous avons dû ouvrir le port 5201, qui est le port natif d'utilisation de iperf.
 
 ### Question 16
 _Quel est le protocole de transport utilisé pour le test de débit entre les deux
 machines ?_
 
 ### Réponse 16
-
+Le protocole utilisé est UDP
 
 
