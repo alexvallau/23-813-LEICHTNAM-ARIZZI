@@ -307,7 +307,9 @@ Nous obtenons les résultats suivants
 ```python3
 [ ID] Interval           Transfer     Bitrate         Retr
 [  5]   0.00-10.00  sec  1.09 GBytes   941 Mbits/sec    0             sender
-[  5]   0.00-10.03  sec  1.09 GBytes   937 Mbits/sec                  receiver```
+[  5]   0.00-10.03  sec  1.09 GBytes   937 Mbits/sec                  receiver
+```
+
 Ce qui représente comme débit de montée et de déscente à peu près 117 o/s
 
 ### Question 15
@@ -317,10 +319,50 @@ _Sur quel pare-feu avez-vous ajouté une exception ?_
 Le parefeu sur lequel nous ajouté une exception est le parefeu de la machine B. Nous avons dû ouvrir le port 5201, qui est le port natif d'utilisation de iperf.
 
 ### Question 16
-_Quel est le protocole de transport utilisé pour le test de débit entre les deux
-machines ?_
+_Quel est le protocole de transport utilisé pour le test de débit entre les deux machines ?_
 
 ### Réponse 16
 Le protocole utilisé est UDP
+
+### Question 17
+_Pourquoi selon vous le débit calculé par capinfos est légèrement plus élevé que le débit généré par iperf ?_
+
+### Réponse 17
+Dans un premier temps, nous avons limité notre débit avec i perf à  500 Kbit/s
+```python3
+[ ID] Interval           Transfer     Bitrate         Jitter    Lost/Total Datagrams
+[  5]   0.00-10.00  sec   611 KBytes   500 Kbits/sec  0.015 ms  0/432 (0%)  receiver ```
+ et dans la capture effectuée par wireshark, nous voyons entre autres:
+
+```python3
+
+[root@localhost etudiant]# capinfos /tmp/capture-500k.pcap
+File name:           /tmp/capture-500k.pcap
+File type:           Wireshark/... - pcapng
+File encapsulation:  Ethernet
+File timestamp precision:  nanoseconds (9)
+Packet size limit:   file hdr: (not set)
+Number of packets:   413
+File size:           629kB
+Data size:           615kB
+Capture duration:    9,545075832 seconds
+First packet time:   2024-03-11 14:55:25,971538993
+Last packet time:    2024-03-11 14:55:35,516614825
+Data byte rate:      64kBps
+Data bit rate:       515kbps ```
+
+IPERF utilisé la coouche UDP, tandis que wireshark, voir l'encapsulation totale
+
+
+
+
+
+
+
+
+
+
+
+
 
 
