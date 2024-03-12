@@ -413,7 +413,59 @@ Afin de pallier à ce problème, nous avons décidé de vérifier si la dernièr
   * On refait une demande snmp au routeur
   * On attend 10 secondes
   * On fait notre calcul de débit par rapport à cette dernière requête SNMP
-* Si la dernière ligne ne contient pas de nombre négatif, on éxecute le script normalement. 
+* Si la dernière ligne ne contient pas de nombre négatif, on éxecute le script normalement.
+
+### Question 22
+Exposez votre script
+
+### Réponse 22
+
+``` bash
+
+[root@localhost etudiant]# cat snmp-2.sh
+#!/bin/sh
+
+# C'est l oid correspondant au trafique entrant sur l interface 3(10.250.0.7)
+oid="1.3.6.1.2.1.31.1.1.1.6.3"
+agent_ip="10.100.4.2"
+community="123test123"
+filename="/home/etudiant/data"
+
+#Si le fichier est vide
+if [ ! -s ${filename} ]; then
+        first_octet_value=$(snmpwalk -v2c -c "$community" "$agent_ip" "$oid" | awk '{print $NF}' )
+        first_date=$(date +%s)
+        echo "$first_date;$first_octet_value" >> "${filename}"
+        sleep 10
+fi
+#Récupération de la dernière ligne et des valeurs
+last_line=$(tail -n 1 "${filename}")
+last_line_date=$(echo "$last_line" | cut -d ";" -f 1)
+last_line_octet_value=$(echo "$last_line" | cut -d ";" -f 2)
+
+#Récupération des toutes dernières données
+#octet_value=$(snmpget -v2c -Oq -c ${community} ${agent_ip} ${oid} | cut -d" -f 2)
+octet_value=$(snmpwalk -v2c -c "$community" "$agent_ip" "$oid" | awk '{print $NF}' )
+date=$(date +%s)
+
+
+#Calcul de l'octet
+delta_t=$(($date - $last_line_date))
+delta_octet=$(($octet_value - $last_line_octet_value))
+#Ici, on test si deltat octet est négative,ce qui signfierai une boucle
+if [ $delta_octet -lt 0 ]; then
+    sleep 10
+    first_octet_value=$(snmpwalk -v2c -c "$community" "$agent_ip" "$oid" | awk '{print $NF}' )
+    first_date=$(date +%s)
+    echo "$first_date;$first_octet_value" >> "${filename}"
+    last_line=$(tail -n 1 "${filename}")
+    last_line_date=$(echo "$last_line" | cut -d ";" -f 1)
+    last_line_octet_value=$(echo "$last_line" | cut -d ";" -f 2)
+    delta_octet=$(($octet_value - $last_line_octet_value))
+fi
+octet_seconde=$(($delta_octet / $delta_t))
+echo "$date;$octet_value;$octet_seconde" >> "${filename}"
+``` 
 
 ### Projet Prometheus / Grafana / Netflow
 
