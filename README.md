@@ -385,6 +385,18 @@ echo "${value}"
 ```
 
 
+
+### Question 20
+_Il aurait été possible de ne pas utiliser le cron ou les timers systemd pour ce script,
+par exemple en utilisant la fonction sleep. Pourquoi est-il plus pertinent d’utiliser le cron ou les timers
+systemd plutôt que la fonction sleep._
+
+### Réponse 20
+Le cron appelera ponctuellement le script pour qu'il s'éxécute. SI nous utilisons seulement une fonction sleep, cela signifique que le script est lancé constamment, ce qui utilise des ressources inutilement.
+
+
+### Question 21
+
 ### Projet Prometheus / Grafana / Netflow
 
 ## Synthèse Prometheus
