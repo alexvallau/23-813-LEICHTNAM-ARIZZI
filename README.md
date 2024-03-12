@@ -365,9 +365,9 @@ _Décrire une manipulation « simple » permettant de trouver le débit entrant 
 du réseau en utilisant les compteurs d’octets snmp. Comparer les débits obtenus par SNMP avec les débits générés._
 
 ### Réponse 19
-Une méthode simple consiste à prendre le nombre d'octet(appelons ce nombre octet0) en entrée ou en sortie(en fonction de nos besoins) à l'instant t.
+Une méthode simple consiste à prendre le nombre d'octet(appelons ce nombre octet0) en entrée ou en sortie(en fonction de nos besoins) à l'instant t_{0}.
 Nous attendons l'instant t+1 et nous reprennons le nombre d'octet(appelons ce nombre octet1) ayant normalement évolués.
-Nous faisons ensuite le calcul suivant: (octet1-octet0)/(t+1)-T_0
+Nous faisons ensuite le calcul suivant: (octet1-octet0)/(t+1)-t_{0}
 
 
 ### Script bash de mesure de débit en SNMP
