@@ -374,7 +374,15 @@ Nous faisons ensuite le calcul suivant: (octet1-octet0)/(t+1)-t_{0}
 
 ## Récupération du compteur d’octets
 
+``` bash
+#!/bin/sh
 
+oid="1.3.6.1.2.1.31.1.1.1.6.1"
+agent_ip="10.100.4.2"
+community="123test123"
+value=$(snmpwalk -v2c -c "$community" "$agent_ip" "$oid" | awk '{print $NF}' )
+echo "${value}"
+```
 
 
 
