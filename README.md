@@ -372,6 +372,9 @@ Nous faisons ensuite le calcul suivant: (octet1-octet0)/(t+1)-t_{0}
 
 ### Script bash de mesure de débit en SNMP
 
+## Récupération du compteur d’octets
+
+
 
 
 
