@@ -465,7 +465,16 @@ if [ $delta_octet -lt 0 ]; then
 fi
 octet_seconde=$(($delta_octet / $delta_t))
 echo "$date;$octet_value;$octet_seconde" >> "${filename}"
-``` 
+```
+
+### Question 23
+_Décrire la configuration mise en place. Donner dans votre compte-rendu l’adresse IP
+de la machine sur laquelle le script s’exécute._
+
+### Réponse 23
+``` bash
+* * * * * /home/etudiant/snmp-2.sh
+```
 
 ### Projet Prometheus / Grafana / Netflow
 
