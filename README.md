@@ -413,7 +413,7 @@ Afin de pallier à ce problème, nous avons décidé de vérifier si la dernièr
   * On refait une demande snmp au routeur
   * On attend 10 secondes
   * On fait notre calcul de débit par rapport à cette dernière requête SNMP
-Si la dernière ligne ne contient pas de nombre négatif, on éxecute le script normalement. 
+* Si la dernière ligne ne contient pas de nombre négatif, on éxecute le script normalement. 
 
 ### Projet Prometheus / Grafana / Netflow
 
