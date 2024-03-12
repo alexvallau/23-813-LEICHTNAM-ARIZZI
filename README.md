@@ -355,10 +355,19 @@ Data bit rate:       515kbps
 Iperf mesure le débit au niveau de la couche de transport (TCP ou UDP), tandis que capinfos mesure le débit au niveau des trames capturées, ce qui inclut les en-têtes de protocole, les encapsulations et éventuellement d'autres surcharges de protocole. Par conséquent, si les trames capturées incluent des en-têtes supplémentaires (par exemple, des en-têtes VLAN), cela peut augmenter légèrement le débit calculé par capinfos par rapport au débit mesuré par iperf.
 
 ### Question 18
- _Les compteurs d’octets sont disponibles en version 32 bits (ifInOctets, ifOutOctets) ou
-en version 64 bits (ifHCInOctets, ifHCOutOctets). Justifier précisément quels OID il faut utiliser._
+ _Les compteurs d’octets sont disponibles en version 32 bits (ifInOctets, ifOutOctets) ou en version 64 bits (ifHCInOctets, ifHCOutOctets). Justifier précisément quels OID il faut utiliser._
+
+### Réponse 18
+Nous utiliserons l'OID de l'interface out en 64 bits
 
 ### Question 19
+_Décrire une manipulation « simple » permettant de trouver le débit entrant ou sortant
+du réseau en utilisant les compteurs d’octets snmp. Comparer les débits obtenus par SNMP avec les débits générés._
+
+### Réponse 19
+Une méthode simple consiste à prendre le nombre d'octet(appelons ce nombre octet0) en entrée ou en sortie(en fonction de nos besoins) à l'instant t.
+Nous attendons l'instant t+1 et nous reprennons le nombre d'octet(appelons ce nombre octet1) ayant normalement évolués.
+Nous faisons ensuite le calcul suivant: (octet1-octet0)/(t+1)-T_0
 
 
 ### Script bash de mesure de débit en SNMP
