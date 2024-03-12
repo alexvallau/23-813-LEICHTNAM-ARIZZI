@@ -385,7 +385,35 @@ echo "${value}"
 ```
 
 
+### Projet Prometheus / Grafana / Netflow
 
+## Synthèse Prometheus
+
+Fonctionnement de Prometheus :
+
+Prometheus est un système de surveillance moderne, spécialisé dans la collecte et le stockage de métriques provenant d'environnements informatiques. 
+Son architecture repose sur plusieurs éléments essentiels travaillant de concert pour offrir une surveillance performante et fiable.
+Prometheus utilise une collecte basée sur le scraping, permettant de récupérer directement les métriques à partir des applications et des services surveillés. 
+Il interroge périodiquement les endpoints HTTP exposés par ces entités pour extraire les métriques au format Prometheus.
+
+Une fois collectées, les métriques sont stockées localement dans une base de données en séries temporelles. 
+Cette base de données est conçue pour permettre un accès rapide aux données historiques, assurant ainsi une conservation efficace des métriques sur une période définie, tout en optimisant l'utilisation de l'espace de stockage disponible.
+Prometheus propose également des fonctionnalités avancées de traitement et d'analyse des métriques grâce à son langage de requête PromQL. 
+Cela donne aux utilisateurs la possibilité d'exécuter des requêtes sophistiquées pour analyser les données, mettre en place des alertes et créer des tableaux de bord personnalisés pour superviser les performances de leur infrastructure.
+Enfin, l'intégration de Prometheus avec des outils de visualisation tels que Grafana permet de créer des tableaux de bord interactifs et des graphiques basés sur les métriques collectées. 
+Cette fonctionnalité offre aux utilisateurs une visualisation claire et détaillée de leurs données, facilitant ainsi l'obtention d'informations précieuses sur les performances du système.
+
+Comparaison avec d'autres Solutions de Supervision :
+
+Comparé à des solutions de supervision telles que Nagios ou Zabbix Prometheus présente plusieurs avantages significatifs qui en font un choix privilégié pour de nombreuses entreprises.
+D'abord, sa méthode de collecte moderne basée sur le scraping le rend particulièrement adapté aux environnements cloud et conteneurisés. 
+Contrairement aux solutions traditionnelles, Prometheus est conçu pour fonctionner efficacement dans des environnements dynamiques où les charges de travail sont souvent transitoires.
+De plus, le modèle de stockage à double échantillonnage de Prometheus offre un équilibre optimal entre précision et efficacité. 
+Cela permet de conserver les données historiques de manière économique, ce qui est crucial dans les environnements de grande envergure où la gestion du stockage des métriques peut rapidement devenir complexe.
+Prometheus se distingue également par sa grande extensibilité, avec une bibliothèque étendue de plug-ins et d'intégrations disponibles. 
+Son langage de requête PromQL permet une analyse avancée et personnalisée des données, offrant ainsi une flexibilité significative pour surveiller et analyser les systèmes selon les besoins spécifiques de chaque organisation.
+Enfin, l'intégration étroite de Prometheus avec Kubernetes en fait une solution populaire pour la surveillance des applications et des services déployés dans des clusters Kubernetes. 
+Cette compatibilité native en fait un choix stratégique pour les organisations qui adoptent Kubernetes et recherchent une solution de supervision moderne et efficace.
 
 
 
