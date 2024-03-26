@@ -1,4 +1,4 @@
-### Script bash de mesure de débit en SNMP
+# Script bash de mesure de débit en SNMP
 
 ## Récupération du compteur d’octets
 
