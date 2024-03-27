@@ -1,0 +1,66 @@
+version: '3'
+
+services:
+  prometheus:
+    image: prom/prometheus
+    container_name: prometheus
+    command:
+      - '--config.file=/etc/prometheus/prometheus.yml'
+    ports:
+      - 9090:9090
+    restart: unless-stopped
+    volumes:
+      - ./prometheus:/etc/prometheus
+      - prom_data:/prometheus
+    networks:
+      - localprom
+
+  grafana:
+    image: grafana/grafana
+    container_name: grafana
+    ports:
+      - 3000:3000
+    restart: unless-stopped
+    volumes:
+      - ./grafana:/etc/grafana/provisioning/datasources
+      - grafana_data:/var/lib/grafana
+    
+    networks:
+      - localprom
+
+  snmp-exporter:
+    image: 'prom/snmp-exporter:latest'
+    container_name: snmp-exporter
+    volumes:
+      - '/home/etudiant/monitoring/prometheus/snmp-exporter/snmp.yml:/etc/snmp_exporter/snmp.yml'
+    restart: always
+    networks:
+     - localprom
+    expose:
+      - 9116
+    ports:
+      - '9116:9116'
+      - 161:161/udp      
+    command: --config.file=/etc/snmp_exporter/snmp.yml
+
+
+  blackbox_exporter:
+    image: prom/blackbox-exporter
+    container_name: blackbox
+    ports:
+      - "9115:9115"
+    restart: always
+    volumes:
+      - "./prometheus/blackbox/:/config"
+    command: --config.file=/config/blackbox.yml
+    networks:
+     - localprom
+
+
+volumes:
+  prom_data:
+  grafana_data:
+
+networks:
+  localprom:
+    driver: bridge

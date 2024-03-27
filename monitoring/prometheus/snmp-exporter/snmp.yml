@@ -1,0 +1,51 @@
+# WARNING: This file was auto-generated using snmp_exporter generator, manual changes will be lost.
+auths:
+  public_v2:
+    community: 123test123
+    security_level: noAuthNoPriv
+    auth_protocol: MD5
+    priv_protocol: DES
+    version: 2
+modules:
+  if_mib:
+    walk:
+    - 1.3.6.1.2.1.31.1.1.1.10
+    - 1.3.6.1.2.1.31.1.1.1.6
+    - 1.3.6.1.2.1.68.1.3.1.3
+    get:
+    - 1.3.6.1.2.1.1.3.0
+    metrics:
+    - name: sysUpTime
+      oid: 1.3.6.1.2.1.1.3
+      type: gauge
+      help: The time (in hundredths of a second) since the network management portion
+        of the system was last re-initialized. - 1.3.6.1.2.1.1.3
+    - name: ifHCOutOctets
+      oid: 1.3.6.1.2.1.31.1.1.1.10
+      type: counter
+      help: The total number of octets transmitted out of the interface, including
+        framing characters - 1.3.6.1.2.1.31.1.1.1.10
+      indexes:
+      - labelname: ifIndex
+        type: gauge
+    - name: ifHCInOctets
+      oid: 1.3.6.1.2.1.31.1.1.1.6
+      type: counter
+      help: The total number of octets received on the interface, including framing
+        characters - 1.3.6.1.2.1.31.1.1.1.6
+      indexes:
+      - labelname: ifIndex
+        type: gauge
+    - name: vrrpOperState
+      oid: 1.3.6.1.2.1.68.1.3.1.3
+      type: gauge
+      help: The current state of the virtual router - 1.3.6.1.2.1.68.1.3.1.3
+      indexes:
+      - labelname: ifIndex
+        type: gauge
+      - labelname: vrrpOperVrId
+        type: gauge
+      enum_values:
+        1: initialize
+        2: backup
+        3: master

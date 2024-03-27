@@ -1,0 +1,28 @@
+global:
+  scrape_interval: 5s
+
+scrape_configs:
+  - job_name: 'snmp_exporter'
+    static_configs: 
+      - targets: ['0.0.0.0:9116'] 
+  
+- job_name: 'snmp-exporter-cisco'
+  static_configs
+    - targets:
+      - 10.100.4.1
+      - 10.100.4.2  
+    scrape_interval: 5s
+    scrape_timeout: 3s
+    metrics_path: /snmp
+    params:
+      module: [if_mib]
+      auth: [public_v2]
+    file_sd_configs:
+    - files:
+      - './targets/snmp-targets/cisco.yml'
+    relabel_configs:
+      - source_labels: [__address__]
+        target_label: __param_target
+      - target_label: __address__
+        replacement: 0.0.0.0:9116
+

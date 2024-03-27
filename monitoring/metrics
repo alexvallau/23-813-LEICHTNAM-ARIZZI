@@ -1,0 +1,573 @@
+# HELP go_gc_duration_seconds A summary of the pause duration of garbage collection cycles.
+# TYPE go_gc_duration_seconds summary
+go_gc_duration_seconds{quantile="0"} 1.903e-05
+go_gc_duration_seconds{quantile="0.25"} 2.4295e-05
+go_gc_duration_seconds{quantile="0.5"} 3.5688e-05
+go_gc_duration_seconds{quantile="0.75"} 7.1533e-05
+go_gc_duration_seconds{quantile="1"} 0.00748906
+go_gc_duration_seconds_sum 0.007731712
+go_gc_duration_seconds_count 8
+# HELP go_goroutines Number of goroutines that currently exist.
+# TYPE go_goroutines gauge
+go_goroutines 10
+# HELP go_info Information about the Go environment.
+# TYPE go_info gauge
+go_info{version="go1.21.5"} 1
+# HELP go_memstats_alloc_bytes Number of bytes allocated and still in use.
+# TYPE go_memstats_alloc_bytes gauge
+go_memstats_alloc_bytes 4.0784176e+07
+# HELP go_memstats_alloc_bytes_total Total number of bytes allocated, even if freed.
+# TYPE go_memstats_alloc_bytes_total counter
+go_memstats_alloc_bytes_total 9.3437648e+07
+# HELP go_memstats_buck_hash_sys_bytes Number of bytes used by the profiling bucket hash table.
+# TYPE go_memstats_buck_hash_sys_bytes gauge
+go_memstats_buck_hash_sys_bytes 1.462354e+06
+# HELP go_memstats_frees_total Total number of frees.
+# TYPE go_memstats_frees_total counter
+go_memstats_frees_total 458797
+# HELP go_memstats_gc_sys_bytes Number of bytes used for garbage collection system metadata.
+# TYPE go_memstats_gc_sys_bytes gauge
+go_memstats_gc_sys_bytes 3.94688e+06
+# HELP go_memstats_heap_alloc_bytes Number of heap bytes allocated and still in use.
+# TYPE go_memstats_heap_alloc_bytes gauge
+go_memstats_heap_alloc_bytes 4.0784176e+07
+# HELP go_memstats_heap_idle_bytes Number of heap bytes waiting to be used.
+# TYPE go_memstats_heap_idle_bytes gauge
+go_memstats_heap_idle_bytes 1.871872e+07
+# HELP go_memstats_heap_inuse_bytes Number of heap bytes that are in use.
+# TYPE go_memstats_heap_inuse_bytes gauge
+go_memstats_heap_inuse_bytes 4.3769856e+07
+# HELP go_memstats_heap_objects Number of allocated objects.
+# TYPE go_memstats_heap_objects gauge
+go_memstats_heap_objects 81943
+# HELP go_memstats_heap_released_bytes Number of heap bytes released to OS.
+# TYPE go_memstats_heap_released_bytes gauge
+go_memstats_heap_released_bytes 1.482752e+07
+# HELP go_memstats_heap_sys_bytes Number of heap bytes obtained from system.
+# TYPE go_memstats_heap_sys_bytes gauge
+go_memstats_heap_sys_bytes 6.2488576e+07
+# HELP go_memstats_last_gc_time_seconds Number of seconds since 1970 of last garbage collection.
+# TYPE go_memstats_last_gc_time_seconds gauge
+go_memstats_last_gc_time_seconds 1.7104392628606095e+09
+# HELP go_memstats_lookups_total Total number of pointer lookups.
+# TYPE go_memstats_lookups_total counter
+go_memstats_lookups_total 0
+# HELP go_memstats_mallocs_total Total number of mallocs.
+# TYPE go_memstats_mallocs_total counter
+go_memstats_mallocs_total 540740
+# HELP go_memstats_mcache_inuse_bytes Number of bytes in use by mcache structures.
+# TYPE go_memstats_mcache_inuse_bytes gauge
+go_memstats_mcache_inuse_bytes 1200
+# HELP go_memstats_mcache_sys_bytes Number of bytes used for mcache structures obtained from system.
+# TYPE go_memstats_mcache_sys_bytes gauge
+go_memstats_mcache_sys_bytes 15600
+# HELP go_memstats_mspan_inuse_bytes Number of bytes in use by mspan structures.
+# TYPE go_memstats_mspan_inuse_bytes gauge
+go_memstats_mspan_inuse_bytes 135408
+# HELP go_memstats_mspan_sys_bytes Number of bytes used for mspan structures obtained from system.
+# TYPE go_memstats_mspan_sys_bytes gauge
+go_memstats_mspan_sys_bytes 293328
+# HELP go_memstats_next_gc_bytes Number of heap bytes when next garbage collection will take place.
+# TYPE go_memstats_next_gc_bytes gauge
+go_memstats_next_gc_bytes 4.55756e+07
+# HELP go_memstats_other_sys_bytes Number of bytes used for other system allocations.
+# TYPE go_memstats_other_sys_bytes gauge
+go_memstats_other_sys_bytes 414838
+# HELP go_memstats_stack_inuse_bytes Number of bytes in use by the stack allocator.
+# TYPE go_memstats_stack_inuse_bytes gauge
+go_memstats_stack_inuse_bytes 425984
+# HELP go_memstats_stack_sys_bytes Number of bytes obtained from system for stack allocator.
+# TYPE go_memstats_stack_sys_bytes gauge
+go_memstats_stack_sys_bytes 425984
+# HELP go_memstats_sys_bytes Number of bytes obtained from system.
+# TYPE go_memstats_sys_bytes gauge
+go_memstats_sys_bytes 6.904756e+07
+# HELP go_threads Number of OS threads created.
+# TYPE go_threads gauge
+go_threads 6
+# HELP process_cpu_seconds_total Total user and system CPU time spent in seconds.
+# TYPE process_cpu_seconds_total counter
+process_cpu_seconds_total 0.41
+# HELP process_max_fds Maximum number of open file descriptors.
+# TYPE process_max_fds gauge
+process_max_fds 1.073741816e+09
+# HELP process_open_fds Number of open file descriptors.
+# TYPE process_open_fds gauge
+process_open_fds 10
+# HELP process_resident_memory_bytes Resident memory size in bytes.
+# TYPE process_resident_memory_bytes gauge
+process_resident_memory_bytes 5.8343424e+07
+# HELP process_start_time_seconds Start time of the process since unix epoch in seconds.
+# TYPE process_start_time_seconds gauge
+process_start_time_seconds 1.71043925786e+09
+# HELP process_virtual_memory_bytes Virtual memory size in bytes.
+# TYPE process_virtual_memory_bytes gauge
+process_virtual_memory_bytes 1.268252672e+09
+# HELP process_virtual_memory_max_bytes Maximum amount of virtual memory available in bytes.
+# TYPE process_virtual_memory_max_bytes gauge
+process_virtual_memory_max_bytes 1.8446744073709552e+19
+# HELP promhttp_metric_handler_requests_in_flight Current number of scrapes being served.
+# TYPE promhttp_metric_handler_requests_in_flight gauge
+promhttp_metric_handler_requests_in_flight 1
+# HELP promhttp_metric_handler_requests_total Total number of scrapes by HTTP status code.
+# TYPE promhttp_metric_handler_requests_total counter
+promhttp_metric_handler_requests_total{code="200"} 1
+promhttp_metric_handler_requests_total{code="500"} 0
+promhttp_metric_handler_requests_total{code="503"} 0
+# HELP snmp_collection_duration_seconds Duration of collections by the SNMP exporter
+# TYPE snmp_collection_duration_seconds histogram
+snmp_collection_duration_seconds_bucket{module="apcups",le="0.005"} 0
+snmp_collection_duration_seconds_bucket{module="apcups",le="0.01"} 0
+snmp_collection_duration_seconds_bucket{module="apcups",le="0.025"} 0
+snmp_collection_duration_seconds_bucket{module="apcups",le="0.05"} 0
+snmp_collection_duration_seconds_bucket{module="apcups",le="0.1"} 0
+snmp_collection_duration_seconds_bucket{module="apcups",le="0.25"} 0
+snmp_collection_duration_seconds_bucket{module="apcups",le="0.5"} 0
+snmp_collection_duration_seconds_bucket{module="apcups",le="1"} 0
+snmp_collection_duration_seconds_bucket{module="apcups",le="2.5"} 0
+snmp_collection_duration_seconds_bucket{module="apcups",le="5"} 0
+snmp_collection_duration_seconds_bucket{module="apcups",le="10"} 0
+snmp_collection_duration_seconds_bucket{module="apcups",le="+Inf"} 0
+snmp_collection_duration_seconds_sum{module="apcups"} 0
+snmp_collection_duration_seconds_count{module="apcups"} 0
+snmp_collection_duration_seconds_bucket{module="arista_sw",le="0.005"} 0
+snmp_collection_duration_seconds_bucket{module="arista_sw",le="0.01"} 0
+snmp_collection_duration_seconds_bucket{module="arista_sw",le="0.025"} 0
+snmp_collection_duration_seconds_bucket{module="arista_sw",le="0.05"} 0
+snmp_collection_duration_seconds_bucket{module="arista_sw",le="0.1"} 0
+snmp_collection_duration_seconds_bucket{module="arista_sw",le="0.25"} 0
+snmp_collection_duration_seconds_bucket{module="arista_sw",le="0.5"} 0
+snmp_collection_duration_seconds_bucket{module="arista_sw",le="1"} 0
+snmp_collection_duration_seconds_bucket{module="arista_sw",le="2.5"} 0
+snmp_collection_duration_seconds_bucket{module="arista_sw",le="5"} 0
+snmp_collection_duration_seconds_bucket{module="arista_sw",le="10"} 0
+snmp_collection_duration_seconds_bucket{module="arista_sw",le="+Inf"} 0
+snmp_collection_duration_seconds_sum{module="arista_sw"} 0
+snmp_collection_duration_seconds_count{module="arista_sw"} 0
+snmp_collection_duration_seconds_bucket{module="cisco_wlc",le="0.005"} 0
+snmp_collection_duration_seconds_bucket{module="cisco_wlc",le="0.01"} 0
+snmp_collection_duration_seconds_bucket{module="cisco_wlc",le="0.025"} 0
+snmp_collection_duration_seconds_bucket{module="cisco_wlc",le="0.05"} 0
+snmp_collection_duration_seconds_bucket{module="cisco_wlc",le="0.1"} 0
+snmp_collection_duration_seconds_bucket{module="cisco_wlc",le="0.25"} 0
+snmp_collection_duration_seconds_bucket{module="cisco_wlc",le="0.5"} 0
+snmp_collection_duration_seconds_bucket{module="cisco_wlc",le="1"} 0
+snmp_collection_duration_seconds_bucket{module="cisco_wlc",le="2.5"} 0
+snmp_collection_duration_seconds_bucket{module="cisco_wlc",le="5"} 0
+snmp_collection_duration_seconds_bucket{module="cisco_wlc",le="10"} 0
+snmp_collection_duration_seconds_bucket{module="cisco_wlc",le="+Inf"} 0
+snmp_collection_duration_seconds_sum{module="cisco_wlc"} 0
+snmp_collection_duration_seconds_count{module="cisco_wlc"} 0
+snmp_collection_duration_seconds_bucket{module="cyberpower",le="0.005"} 0
+snmp_collection_duration_seconds_bucket{module="cyberpower",le="0.01"} 0
+snmp_collection_duration_seconds_bucket{module="cyberpower",le="0.025"} 0
+snmp_collection_duration_seconds_bucket{module="cyberpower",le="0.05"} 0
+snmp_collection_duration_seconds_bucket{module="cyberpower",le="0.1"} 0
+snmp_collection_duration_seconds_bucket{module="cyberpower",le="0.25"} 0
+snmp_collection_duration_seconds_bucket{module="cyberpower",le="0.5"} 0
+snmp_collection_duration_seconds_bucket{module="cyberpower",le="1"} 0
+snmp_collection_duration_seconds_bucket{module="cyberpower",le="2.5"} 0
+snmp_collection_duration_seconds_bucket{module="cyberpower",le="5"} 0
+snmp_collection_duration_seconds_bucket{module="cyberpower",le="10"} 0
+snmp_collection_duration_seconds_bucket{module="cyberpower",le="+Inf"} 0
+snmp_collection_duration_seconds_sum{module="cyberpower"} 0
+snmp_collection_duration_seconds_count{module="cyberpower"} 0
+snmp_collection_duration_seconds_bucket{module="ddwrt",le="0.005"} 0
+snmp_collection_duration_seconds_bucket{module="ddwrt",le="0.01"} 0
+snmp_collection_duration_seconds_bucket{module="ddwrt",le="0.025"} 0
+snmp_collection_duration_seconds_bucket{module="ddwrt",le="0.05"} 0
+snmp_collection_duration_seconds_bucket{module="ddwrt",le="0.1"} 0
+snmp_collection_duration_seconds_bucket{module="ddwrt",le="0.25"} 0
+snmp_collection_duration_seconds_bucket{module="ddwrt",le="0.5"} 0
+snmp_collection_duration_seconds_bucket{module="ddwrt",le="1"} 0
+snmp_collection_duration_seconds_bucket{module="ddwrt",le="2.5"} 0
+snmp_collection_duration_seconds_bucket{module="ddwrt",le="5"} 0
+snmp_collection_duration_seconds_bucket{module="ddwrt",le="10"} 0
+snmp_collection_duration_seconds_bucket{module="ddwrt",le="+Inf"} 0
+snmp_collection_duration_seconds_sum{module="ddwrt"} 0
+snmp_collection_duration_seconds_count{module="ddwrt"} 0
+snmp_collection_duration_seconds_bucket{module="eap",le="0.005"} 0
+snmp_collection_duration_seconds_bucket{module="eap",le="0.01"} 0
+snmp_collection_duration_seconds_bucket{module="eap",le="0.025"} 0
+snmp_collection_duration_seconds_bucket{module="eap",le="0.05"} 0
+snmp_collection_duration_seconds_bucket{module="eap",le="0.1"} 0
+snmp_collection_duration_seconds_bucket{module="eap",le="0.25"} 0
+snmp_collection_duration_seconds_bucket{module="eap",le="0.5"} 0
+snmp_collection_duration_seconds_bucket{module="eap",le="1"} 0
+snmp_collection_duration_seconds_bucket{module="eap",le="2.5"} 0
+snmp_collection_duration_seconds_bucket{module="eap",le="5"} 0
+snmp_collection_duration_seconds_bucket{module="eap",le="10"} 0
+snmp_collection_duration_seconds_bucket{module="eap",le="+Inf"} 0
+snmp_collection_duration_seconds_sum{module="eap"} 0
+snmp_collection_duration_seconds_count{module="eap"} 0
+snmp_collection_duration_seconds_bucket{module="hrDevice",le="0.005"} 0
+snmp_collection_duration_seconds_bucket{module="hrDevice",le="0.01"} 0
+snmp_collection_duration_seconds_bucket{module="hrDevice",le="0.025"} 0
+snmp_collection_duration_seconds_bucket{module="hrDevice",le="0.05"} 0
+snmp_collection_duration_seconds_bucket{module="hrDevice",le="0.1"} 0
+snmp_collection_duration_seconds_bucket{module="hrDevice",le="0.25"} 0
+snmp_collection_duration_seconds_bucket{module="hrDevice",le="0.5"} 0
+snmp_collection_duration_seconds_bucket{module="hrDevice",le="1"} 0
+snmp_collection_duration_seconds_bucket{module="hrDevice",le="2.5"} 0
+snmp_collection_duration_seconds_bucket{module="hrDevice",le="5"} 0
+snmp_collection_duration_seconds_bucket{module="hrDevice",le="10"} 0
+snmp_collection_duration_seconds_bucket{module="hrDevice",le="+Inf"} 0
+snmp_collection_duration_seconds_sum{module="hrDevice"} 0
+snmp_collection_duration_seconds_count{module="hrDevice"} 0
+snmp_collection_duration_seconds_bucket{module="hrSWInstalled",le="0.005"} 0
+snmp_collection_duration_seconds_bucket{module="hrSWInstalled",le="0.01"} 0
+snmp_collection_duration_seconds_bucket{module="hrSWInstalled",le="0.025"} 0
+snmp_collection_duration_seconds_bucket{module="hrSWInstalled",le="0.05"} 0
+snmp_collection_duration_seconds_bucket{module="hrSWInstalled",le="0.1"} 0
+snmp_collection_duration_seconds_bucket{module="hrSWInstalled",le="0.25"} 0
+snmp_collection_duration_seconds_bucket{module="hrSWInstalled",le="0.5"} 0
+snmp_collection_duration_seconds_bucket{module="hrSWInstalled",le="1"} 0
+snmp_collection_duration_seconds_bucket{module="hrSWInstalled",le="2.5"} 0
+snmp_collection_duration_seconds_bucket{module="hrSWInstalled",le="5"} 0
+snmp_collection_duration_seconds_bucket{module="hrSWInstalled",le="10"} 0
+snmp_collection_duration_seconds_bucket{module="hrSWInstalled",le="+Inf"} 0
+snmp_collection_duration_seconds_sum{module="hrSWInstalled"} 0
+snmp_collection_duration_seconds_count{module="hrSWInstalled"} 0
+snmp_collection_duration_seconds_bucket{module="hrSWRun",le="0.005"} 0
+snmp_collection_duration_seconds_bucket{module="hrSWRun",le="0.01"} 0
+snmp_collection_duration_seconds_bucket{module="hrSWRun",le="0.025"} 0
+snmp_collection_duration_seconds_bucket{module="hrSWRun",le="0.05"} 0
+snmp_collection_duration_seconds_bucket{module="hrSWRun",le="0.1"} 0
+snmp_collection_duration_seconds_bucket{module="hrSWRun",le="0.25"} 0
+snmp_collection_duration_seconds_bucket{module="hrSWRun",le="0.5"} 0
+snmp_collection_duration_seconds_bucket{module="hrSWRun",le="1"} 0
+snmp_collection_duration_seconds_bucket{module="hrSWRun",le="2.5"} 0
+snmp_collection_duration_seconds_bucket{module="hrSWRun",le="5"} 0
+snmp_collection_duration_seconds_bucket{module="hrSWRun",le="10"} 0
+snmp_collection_duration_seconds_bucket{module="hrSWRun",le="+Inf"} 0
+snmp_collection_duration_seconds_sum{module="hrSWRun"} 0
+snmp_collection_duration_seconds_count{module="hrSWRun"} 0
+snmp_collection_duration_seconds_bucket{module="hrSWRunPerf",le="0.005"} 0
+snmp_collection_duration_seconds_bucket{module="hrSWRunPerf",le="0.01"} 0
+snmp_collection_duration_seconds_bucket{module="hrSWRunPerf",le="0.025"} 0
+snmp_collection_duration_seconds_bucket{module="hrSWRunPerf",le="0.05"} 0
+snmp_collection_duration_seconds_bucket{module="hrSWRunPerf",le="0.1"} 0
+snmp_collection_duration_seconds_bucket{module="hrSWRunPerf",le="0.25"} 0
+snmp_collection_duration_seconds_bucket{module="hrSWRunPerf",le="0.5"} 0
+snmp_collection_duration_seconds_bucket{module="hrSWRunPerf",le="1"} 0
+snmp_collection_duration_seconds_bucket{module="hrSWRunPerf",le="2.5"} 0
+snmp_collection_duration_seconds_bucket{module="hrSWRunPerf",le="5"} 0
+snmp_collection_duration_seconds_bucket{module="hrSWRunPerf",le="10"} 0
+snmp_collection_duration_seconds_bucket{module="hrSWRunPerf",le="+Inf"} 0
+snmp_collection_duration_seconds_sum{module="hrSWRunPerf"} 0
+snmp_collection_duration_seconds_count{module="hrSWRunPerf"} 0
+snmp_collection_duration_seconds_bucket{module="hrStorage",le="0.005"} 0
+snmp_collection_duration_seconds_bucket{module="hrStorage",le="0.01"} 0
+snmp_collection_duration_seconds_bucket{module="hrStorage",le="0.025"} 0
+snmp_collection_duration_seconds_bucket{module="hrStorage",le="0.05"} 0
+snmp_collection_duration_seconds_bucket{module="hrStorage",le="0.1"} 0
+snmp_collection_duration_seconds_bucket{module="hrStorage",le="0.25"} 0
+snmp_collection_duration_seconds_bucket{module="hrStorage",le="0.5"} 0
+snmp_collection_duration_seconds_bucket{module="hrStorage",le="1"} 0
+snmp_collection_duration_seconds_bucket{module="hrStorage",le="2.5"} 0
+snmp_collection_duration_seconds_bucket{module="hrStorage",le="5"} 0
+snmp_collection_duration_seconds_bucket{module="hrStorage",le="10"} 0
+snmp_collection_duration_seconds_bucket{module="hrStorage",le="+Inf"} 0
+snmp_collection_duration_seconds_sum{module="hrStorage"} 0
+snmp_collection_duration_seconds_count{module="hrStorage"} 0
+snmp_collection_duration_seconds_bucket{module="hrSystem",le="0.005"} 0
+snmp_collection_duration_seconds_bucket{module="hrSystem",le="0.01"} 0
+snmp_collection_duration_seconds_bucket{module="hrSystem",le="0.025"} 0
+snmp_collection_duration_seconds_bucket{module="hrSystem",le="0.05"} 0
+snmp_collection_duration_seconds_bucket{module="hrSystem",le="0.1"} 0
+snmp_collection_duration_seconds_bucket{module="hrSystem",le="0.25"} 0
+snmp_collection_duration_seconds_bucket{module="hrSystem",le="0.5"} 0
+snmp_collection_duration_seconds_bucket{module="hrSystem",le="1"} 0
+snmp_collection_duration_seconds_bucket{module="hrSystem",le="2.5"} 0
+snmp_collection_duration_seconds_bucket{module="hrSystem",le="5"} 0
+snmp_collection_duration_seconds_bucket{module="hrSystem",le="10"} 0
+snmp_collection_duration_seconds_bucket{module="hrSystem",le="+Inf"} 0
+snmp_collection_duration_seconds_sum{module="hrSystem"} 0
+snmp_collection_duration_seconds_count{module="hrSystem"} 0
+snmp_collection_duration_seconds_bucket{module="if_mib",le="0.005"} 0
+snmp_collection_duration_seconds_bucket{module="if_mib",le="0.01"} 0
+snmp_collection_duration_seconds_bucket{module="if_mib",le="0.025"} 0
+snmp_collection_duration_seconds_bucket{module="if_mib",le="0.05"} 0
+snmp_collection_duration_seconds_bucket{module="if_mib",le="0.1"} 0
+snmp_collection_duration_seconds_bucket{module="if_mib",le="0.25"} 0
+snmp_collection_duration_seconds_bucket{module="if_mib",le="0.5"} 0
+snmp_collection_duration_seconds_bucket{module="if_mib",le="1"} 0
+snmp_collection_duration_seconds_bucket{module="if_mib",le="2.5"} 0
+snmp_collection_duration_seconds_bucket{module="if_mib",le="5"} 0
+snmp_collection_duration_seconds_bucket{module="if_mib",le="10"} 0
+snmp_collection_duration_seconds_bucket{module="if_mib",le="+Inf"} 2
+snmp_collection_duration_seconds_sum{module="if_mib"} 40.021517443
+snmp_collection_duration_seconds_count{module="if_mib"} 2
+snmp_collection_duration_seconds_bucket{module="infrapower_pdu",le="0.005"} 0
+snmp_collection_duration_seconds_bucket{module="infrapower_pdu",le="0.01"} 0
+snmp_collection_duration_seconds_bucket{module="infrapower_pdu",le="0.025"} 0
+snmp_collection_duration_seconds_bucket{module="infrapower_pdu",le="0.05"} 0
+snmp_collection_duration_seconds_bucket{module="infrapower_pdu",le="0.1"} 0
+snmp_collection_duration_seconds_bucket{module="infrapower_pdu",le="0.25"} 0
+snmp_collection_duration_seconds_bucket{module="infrapower_pdu",le="0.5"} 0
+snmp_collection_duration_seconds_bucket{module="infrapower_pdu",le="1"} 0
+snmp_collection_duration_seconds_bucket{module="infrapower_pdu",le="2.5"} 0
+snmp_collection_duration_seconds_bucket{module="infrapower_pdu",le="5"} 0
+snmp_collection_duration_seconds_bucket{module="infrapower_pdu",le="10"} 0
+snmp_collection_duration_seconds_bucket{module="infrapower_pdu",le="+Inf"} 0
+snmp_collection_duration_seconds_sum{module="infrapower_pdu"} 0
+snmp_collection_duration_seconds_count{module="infrapower_pdu"} 0
+snmp_collection_duration_seconds_bucket{module="ip_mib",le="0.005"} 0
+snmp_collection_duration_seconds_bucket{module="ip_mib",le="0.01"} 0
+snmp_collection_duration_seconds_bucket{module="ip_mib",le="0.025"} 0
+snmp_collection_duration_seconds_bucket{module="ip_mib",le="0.05"} 0
+snmp_collection_duration_seconds_bucket{module="ip_mib",le="0.1"} 0
+snmp_collection_duration_seconds_bucket{module="ip_mib",le="0.25"} 0
+snmp_collection_duration_seconds_bucket{module="ip_mib",le="0.5"} 0
+snmp_collection_duration_seconds_bucket{module="ip_mib",le="1"} 0
+snmp_collection_duration_seconds_bucket{module="ip_mib",le="2.5"} 0
+snmp_collection_duration_seconds_bucket{module="ip_mib",le="5"} 0
+snmp_collection_duration_seconds_bucket{module="ip_mib",le="10"} 0
+snmp_collection_duration_seconds_bucket{module="ip_mib",le="+Inf"} 0
+snmp_collection_duration_seconds_sum{module="ip_mib"} 0
+snmp_collection_duration_seconds_count{module="ip_mib"} 0
+snmp_collection_duration_seconds_bucket{module="keepalived",le="0.005"} 0
+snmp_collection_duration_seconds_bucket{module="keepalived",le="0.01"} 0
+snmp_collection_duration_seconds_bucket{module="keepalived",le="0.025"} 0
+snmp_collection_duration_seconds_bucket{module="keepalived",le="0.05"} 0
+snmp_collection_duration_seconds_bucket{module="keepalived",le="0.1"} 0
+snmp_collection_duration_seconds_bucket{module="keepalived",le="0.25"} 0
+snmp_collection_duration_seconds_bucket{module="keepalived",le="0.5"} 0
+snmp_collection_duration_seconds_bucket{module="keepalived",le="1"} 0
+snmp_collection_duration_seconds_bucket{module="keepalived",le="2.5"} 0
+snmp_collection_duration_seconds_bucket{module="keepalived",le="5"} 0
+snmp_collection_duration_seconds_bucket{module="keepalived",le="10"} 0
+snmp_collection_duration_seconds_bucket{module="keepalived",le="+Inf"} 0
+snmp_collection_duration_seconds_sum{module="keepalived"} 0
+snmp_collection_duration_seconds_count{module="keepalived"} 0
+snmp_collection_duration_seconds_bucket{module="kemp_loadmaster",le="0.005"} 0
+snmp_collection_duration_seconds_bucket{module="kemp_loadmaster",le="0.01"} 0
+snmp_collection_duration_seconds_bucket{module="kemp_loadmaster",le="0.025"} 0
+snmp_collection_duration_seconds_bucket{module="kemp_loadmaster",le="0.05"} 0
+snmp_collection_duration_seconds_bucket{module="kemp_loadmaster",le="0.1"} 0
+snmp_collection_duration_seconds_bucket{module="kemp_loadmaster",le="0.25"} 0
+snmp_collection_duration_seconds_bucket{module="kemp_loadmaster",le="0.5"} 0
+snmp_collection_duration_seconds_bucket{module="kemp_loadmaster",le="1"} 0
+snmp_collection_duration_seconds_bucket{module="kemp_loadmaster",le="2.5"} 0
+snmp_collection_duration_seconds_bucket{module="kemp_loadmaster",le="5"} 0
+snmp_collection_duration_seconds_bucket{module="kemp_loadmaster",le="10"} 0
+snmp_collection_duration_seconds_bucket{module="kemp_loadmaster",le="+Inf"} 0
+snmp_collection_duration_seconds_sum{module="kemp_loadmaster"} 0
+snmp_collection_duration_seconds_count{module="kemp_loadmaster"} 0
+snmp_collection_duration_seconds_bucket{module="liebert_pdu",le="0.005"} 0
+snmp_collection_duration_seconds_bucket{module="liebert_pdu",le="0.01"} 0
+snmp_collection_duration_seconds_bucket{module="liebert_pdu",le="0.025"} 0
+snmp_collection_duration_seconds_bucket{module="liebert_pdu",le="0.05"} 0
+snmp_collection_duration_seconds_bucket{module="liebert_pdu",le="0.1"} 0
+snmp_collection_duration_seconds_bucket{module="liebert_pdu",le="0.25"} 0
+snmp_collection_duration_seconds_bucket{module="liebert_pdu",le="0.5"} 0
+snmp_collection_duration_seconds_bucket{module="liebert_pdu",le="1"} 0
+snmp_collection_duration_seconds_bucket{module="liebert_pdu",le="2.5"} 0
+snmp_collection_duration_seconds_bucket{module="liebert_pdu",le="5"} 0
+snmp_collection_duration_seconds_bucket{module="liebert_pdu",le="10"} 0
+snmp_collection_duration_seconds_bucket{module="liebert_pdu",le="+Inf"} 0
+snmp_collection_duration_seconds_sum{module="liebert_pdu"} 0
+snmp_collection_duration_seconds_count{module="liebert_pdu"} 0
+snmp_collection_duration_seconds_bucket{module="mikrotik",le="0.005"} 0
+snmp_collection_duration_seconds_bucket{module="mikrotik",le="0.01"} 0
+snmp_collection_duration_seconds_bucket{module="mikrotik",le="0.025"} 0
+snmp_collection_duration_seconds_bucket{module="mikrotik",le="0.05"} 0
+snmp_collection_duration_seconds_bucket{module="mikrotik",le="0.1"} 0
+snmp_collection_duration_seconds_bucket{module="mikrotik",le="0.25"} 0
+snmp_collection_duration_seconds_bucket{module="mikrotik",le="0.5"} 0
+snmp_collection_duration_seconds_bucket{module="mikrotik",le="1"} 0
+snmp_collection_duration_seconds_bucket{module="mikrotik",le="2.5"} 0
+snmp_collection_duration_seconds_bucket{module="mikrotik",le="5"} 0
+snmp_collection_duration_seconds_bucket{module="mikrotik",le="10"} 0
+snmp_collection_duration_seconds_bucket{module="mikrotik",le="+Inf"} 0
+snmp_collection_duration_seconds_sum{module="mikrotik"} 0
+snmp_collection_duration_seconds_count{module="mikrotik"} 0
+snmp_collection_duration_seconds_bucket{module="nec_ix",le="0.005"} 0
+snmp_collection_duration_seconds_bucket{module="nec_ix",le="0.01"} 0
+snmp_collection_duration_seconds_bucket{module="nec_ix",le="0.025"} 0
+snmp_collection_duration_seconds_bucket{module="nec_ix",le="0.05"} 0
+snmp_collection_duration_seconds_bucket{module="nec_ix",le="0.1"} 0
+snmp_collection_duration_seconds_bucket{module="nec_ix",le="0.25"} 0
+snmp_collection_duration_seconds_bucket{module="nec_ix",le="0.5"} 0
+snmp_collection_duration_seconds_bucket{module="nec_ix",le="1"} 0
+snmp_collection_duration_seconds_bucket{module="nec_ix",le="2.5"} 0
+snmp_collection_duration_seconds_bucket{module="nec_ix",le="5"} 0
+snmp_collection_duration_seconds_bucket{module="nec_ix",le="10"} 0
+snmp_collection_duration_seconds_bucket{module="nec_ix",le="+Inf"} 0
+snmp_collection_duration_seconds_sum{module="nec_ix"} 0
+snmp_collection_duration_seconds_count{module="nec_ix"} 0
+snmp_collection_duration_seconds_bucket{module="paloalto_fw",le="0.005"} 0
+snmp_collection_duration_seconds_bucket{module="paloalto_fw",le="0.01"} 0
+snmp_collection_duration_seconds_bucket{module="paloalto_fw",le="0.025"} 0
+snmp_collection_duration_seconds_bucket{module="paloalto_fw",le="0.05"} 0
+snmp_collection_duration_seconds_bucket{module="paloalto_fw",le="0.1"} 0
+snmp_collection_duration_seconds_bucket{module="paloalto_fw",le="0.25"} 0
+snmp_collection_duration_seconds_bucket{module="paloalto_fw",le="0.5"} 0
+snmp_collection_duration_seconds_bucket{module="paloalto_fw",le="1"} 0
+snmp_collection_duration_seconds_bucket{module="paloalto_fw",le="2.5"} 0
+snmp_collection_duration_seconds_bucket{module="paloalto_fw",le="5"} 0
+snmp_collection_duration_seconds_bucket{module="paloalto_fw",le="10"} 0
+snmp_collection_duration_seconds_bucket{module="paloalto_fw",le="+Inf"} 0
+snmp_collection_duration_seconds_sum{module="paloalto_fw"} 0
+snmp_collection_duration_seconds_count{module="paloalto_fw"} 0
+snmp_collection_duration_seconds_bucket{module="printer_mib",le="0.005"} 0
+snmp_collection_duration_seconds_bucket{module="printer_mib",le="0.01"} 0
+snmp_collection_duration_seconds_bucket{module="printer_mib",le="0.025"} 0
+snmp_collection_duration_seconds_bucket{module="printer_mib",le="0.05"} 0
+snmp_collection_duration_seconds_bucket{module="printer_mib",le="0.1"} 0
+snmp_collection_duration_seconds_bucket{module="printer_mib",le="0.25"} 0
+snmp_collection_duration_seconds_bucket{module="printer_mib",le="0.5"} 0
+snmp_collection_duration_seconds_bucket{module="printer_mib",le="1"} 0
+snmp_collection_duration_seconds_bucket{module="printer_mib",le="2.5"} 0
+snmp_collection_duration_seconds_bucket{module="printer_mib",le="5"} 0
+snmp_collection_duration_seconds_bucket{module="printer_mib",le="10"} 0
+snmp_collection_duration_seconds_bucket{module="printer_mib",le="+Inf"} 0
+snmp_collection_duration_seconds_sum{module="printer_mib"} 0
+snmp_collection_duration_seconds_count{module="printer_mib"} 0
+snmp_collection_duration_seconds_bucket{module="raritan",le="0.005"} 0
+snmp_collection_duration_seconds_bucket{module="raritan",le="0.01"} 0
+snmp_collection_duration_seconds_bucket{module="raritan",le="0.025"} 0
+snmp_collection_duration_seconds_bucket{module="raritan",le="0.05"} 0
+snmp_collection_duration_seconds_bucket{module="raritan",le="0.1"} 0
+snmp_collection_duration_seconds_bucket{module="raritan",le="0.25"} 0
+snmp_collection_duration_seconds_bucket{module="raritan",le="0.5"} 0
+snmp_collection_duration_seconds_bucket{module="raritan",le="1"} 0
+snmp_collection_duration_seconds_bucket{module="raritan",le="2.5"} 0
+snmp_collection_duration_seconds_bucket{module="raritan",le="5"} 0
+snmp_collection_duration_seconds_bucket{module="raritan",le="10"} 0
+snmp_collection_duration_seconds_bucket{module="raritan",le="+Inf"} 0
+snmp_collection_duration_seconds_sum{module="raritan"} 0
+snmp_collection_duration_seconds_count{module="raritan"} 0
+snmp_collection_duration_seconds_bucket{module="readynas",le="0.005"} 0
+snmp_collection_duration_seconds_bucket{module="readynas",le="0.01"} 0
+snmp_collection_duration_seconds_bucket{module="readynas",le="0.025"} 0
+snmp_collection_duration_seconds_bucket{module="readynas",le="0.05"} 0
+snmp_collection_duration_seconds_bucket{module="readynas",le="0.1"} 0
+snmp_collection_duration_seconds_bucket{module="readynas",le="0.25"} 0
+snmp_collection_duration_seconds_bucket{module="readynas",le="0.5"} 0
+snmp_collection_duration_seconds_bucket{module="readynas",le="1"} 0
+snmp_collection_duration_seconds_bucket{module="readynas",le="2.5"} 0
+snmp_collection_duration_seconds_bucket{module="readynas",le="5"} 0
+snmp_collection_duration_seconds_bucket{module="readynas",le="10"} 0
+snmp_collection_duration_seconds_bucket{module="readynas",le="+Inf"} 0
+snmp_collection_duration_seconds_sum{module="readynas"} 0
+snmp_collection_duration_seconds_count{module="readynas"} 0
+snmp_collection_duration_seconds_bucket{module="servertech_sentry3",le="0.005"} 0
+snmp_collection_duration_seconds_bucket{module="servertech_sentry3",le="0.01"} 0
+snmp_collection_duration_seconds_bucket{module="servertech_sentry3",le="0.025"} 0
+snmp_collection_duration_seconds_bucket{module="servertech_sentry3",le="0.05"} 0
+snmp_collection_duration_seconds_bucket{module="servertech_sentry3",le="0.1"} 0
+snmp_collection_duration_seconds_bucket{module="servertech_sentry3",le="0.25"} 0
+snmp_collection_duration_seconds_bucket{module="servertech_sentry3",le="0.5"} 0
+snmp_collection_duration_seconds_bucket{module="servertech_sentry3",le="1"} 0
+snmp_collection_duration_seconds_bucket{module="servertech_sentry3",le="2.5"} 0
+snmp_collection_duration_seconds_bucket{module="servertech_sentry3",le="5"} 0
+snmp_collection_duration_seconds_bucket{module="servertech_sentry3",le="10"} 0
+snmp_collection_duration_seconds_bucket{module="servertech_sentry3",le="+Inf"} 0
+snmp_collection_duration_seconds_sum{module="servertech_sentry3"} 0
+snmp_collection_duration_seconds_count{module="servertech_sentry3"} 0
+snmp_collection_duration_seconds_bucket{module="servertech_sentry4",le="0.005"} 0
+snmp_collection_duration_seconds_bucket{module="servertech_sentry4",le="0.01"} 0
+snmp_collection_duration_seconds_bucket{module="servertech_sentry4",le="0.025"} 0
+snmp_collection_duration_seconds_bucket{module="servertech_sentry4",le="0.05"} 0
+snmp_collection_duration_seconds_bucket{module="servertech_sentry4",le="0.1"} 0
+snmp_collection_duration_seconds_bucket{module="servertech_sentry4",le="0.25"} 0
+snmp_collection_duration_seconds_bucket{module="servertech_sentry4",le="0.5"} 0
+snmp_collection_duration_seconds_bucket{module="servertech_sentry4",le="1"} 0
+snmp_collection_duration_seconds_bucket{module="servertech_sentry4",le="2.5"} 0
+snmp_collection_duration_seconds_bucket{module="servertech_sentry4",le="5"} 0
+snmp_collection_duration_seconds_bucket{module="servertech_sentry4",le="10"} 0
+snmp_collection_duration_seconds_bucket{module="servertech_sentry4",le="+Inf"} 0
+snmp_collection_duration_seconds_sum{module="servertech_sentry4"} 0
+snmp_collection_duration_seconds_count{module="servertech_sentry4"} 0
+snmp_collection_duration_seconds_bucket{module="synology",le="0.005"} 0
+snmp_collection_duration_seconds_bucket{module="synology",le="0.01"} 0
+snmp_collection_duration_seconds_bucket{module="synology",le="0.025"} 0
+snmp_collection_duration_seconds_bucket{module="synology",le="0.05"} 0
+snmp_collection_duration_seconds_bucket{module="synology",le="0.1"} 0
+snmp_collection_duration_seconds_bucket{module="synology",le="0.25"} 0
+snmp_collection_duration_seconds_bucket{module="synology",le="0.5"} 0
+snmp_collection_duration_seconds_bucket{module="synology",le="1"} 0
+snmp_collection_duration_seconds_bucket{module="synology",le="2.5"} 0
+snmp_collection_duration_seconds_bucket{module="synology",le="5"} 0
+snmp_collection_duration_seconds_bucket{module="synology",le="10"} 0
+snmp_collection_duration_seconds_bucket{module="synology",le="+Inf"} 0
+snmp_collection_duration_seconds_sum{module="synology"} 0
+snmp_collection_duration_seconds_count{module="synology"} 0
+snmp_collection_duration_seconds_bucket{module="ubiquiti_airfiber",le="0.005"} 0
+snmp_collection_duration_seconds_bucket{module="ubiquiti_airfiber",le="0.01"} 0
+snmp_collection_duration_seconds_bucket{module="ubiquiti_airfiber",le="0.025"} 0
+snmp_collection_duration_seconds_bucket{module="ubiquiti_airfiber",le="0.05"} 0
+snmp_collection_duration_seconds_bucket{module="ubiquiti_airfiber",le="0.1"} 0
+snmp_collection_duration_seconds_bucket{module="ubiquiti_airfiber",le="0.25"} 0
+snmp_collection_duration_seconds_bucket{module="ubiquiti_airfiber",le="0.5"} 0
+snmp_collection_duration_seconds_bucket{module="ubiquiti_airfiber",le="1"} 0
+snmp_collection_duration_seconds_bucket{module="ubiquiti_airfiber",le="2.5"} 0
+snmp_collection_duration_seconds_bucket{module="ubiquiti_airfiber",le="5"} 0
+snmp_collection_duration_seconds_bucket{module="ubiquiti_airfiber",le="10"} 0
+snmp_collection_duration_seconds_bucket{module="ubiquiti_airfiber",le="+Inf"} 0
+snmp_collection_duration_seconds_sum{module="ubiquiti_airfiber"} 0
+snmp_collection_duration_seconds_count{module="ubiquiti_airfiber"} 0
+snmp_collection_duration_seconds_bucket{module="ubiquiti_airmax",le="0.005"} 0
+snmp_collection_duration_seconds_bucket{module="ubiquiti_airmax",le="0.01"} 0
+snmp_collection_duration_seconds_bucket{module="ubiquiti_airmax",le="0.025"} 0
+snmp_collection_duration_seconds_bucket{module="ubiquiti_airmax",le="0.05"} 0
+snmp_collection_duration_seconds_bucket{module="ubiquiti_airmax",le="0.1"} 0
+snmp_collection_duration_seconds_bucket{module="ubiquiti_airmax",le="0.25"} 0
+snmp_collection_duration_seconds_bucket{module="ubiquiti_airmax",le="0.5"} 0
+snmp_collection_duration_seconds_bucket{module="ubiquiti_airmax",le="1"} 0
+snmp_collection_duration_seconds_bucket{module="ubiquiti_airmax",le="2.5"} 0
+snmp_collection_duration_seconds_bucket{module="ubiquiti_airmax",le="5"} 0
+snmp_collection_duration_seconds_bucket{module="ubiquiti_airmax",le="10"} 0
+snmp_collection_duration_seconds_bucket{module="ubiquiti_airmax",le="+Inf"} 0
+snmp_collection_duration_seconds_sum{module="ubiquiti_airmax"} 0
+snmp_collection_duration_seconds_count{module="ubiquiti_airmax"} 0
+snmp_collection_duration_seconds_bucket{module="ubiquiti_unifi",le="0.005"} 0
+snmp_collection_duration_seconds_bucket{module="ubiquiti_unifi",le="0.01"} 0
+snmp_collection_duration_seconds_bucket{module="ubiquiti_unifi",le="0.025"} 0
+snmp_collection_duration_seconds_bucket{module="ubiquiti_unifi",le="0.05"} 0
+snmp_collection_duration_seconds_bucket{module="ubiquiti_unifi",le="0.1"} 0
+snmp_collection_duration_seconds_bucket{module="ubiquiti_unifi",le="0.25"} 0
+snmp_collection_duration_seconds_bucket{module="ubiquiti_unifi",le="0.5"} 0
+snmp_collection_duration_seconds_bucket{module="ubiquiti_unifi",le="1"} 0
+snmp_collection_duration_seconds_bucket{module="ubiquiti_unifi",le="2.5"} 0
+snmp_collection_duration_seconds_bucket{module="ubiquiti_unifi",le="5"} 0
+snmp_collection_duration_seconds_bucket{module="ubiquiti_unifi",le="10"} 0
+snmp_collection_duration_seconds_bucket{module="ubiquiti_unifi",le="+Inf"} 0
+snmp_collection_duration_seconds_sum{module="ubiquiti_unifi"} 0
+snmp_collection_duration_seconds_count{module="ubiquiti_unifi"} 0
+# HELP snmp_exporter_build_info A metric with a constant '1' value labeled by version, revision, branch, goversion from which snmp_exporter was built, and the goos and goarch for the build.
+# TYPE snmp_exporter_build_info gauge
+snmp_exporter_build_info{branch="HEAD",goarch="amd64",goos="linux",goversion="go1.21.5",revision="9c42d6c874d479314e612bca69558c81f8e26287",tags="netgo",version="0.25.0"} 1
+# HELP snmp_packet_duration_seconds A histogram of latencies for SNMP packets.
+# TYPE snmp_packet_duration_seconds histogram
+snmp_packet_duration_seconds_bucket{le="0.0001"} 0
+snmp_packet_duration_seconds_bucket{le="0.0002"} 0
+snmp_packet_duration_seconds_bucket{le="0.0004"} 0
+snmp_packet_duration_seconds_bucket{le="0.0008"} 0
+snmp_packet_duration_seconds_bucket{le="0.0016"} 0
+snmp_packet_duration_seconds_bucket{le="0.0032"} 0
+snmp_packet_duration_seconds_bucket{le="0.0064"} 0
+snmp_packet_duration_seconds_bucket{le="0.0128"} 0
+snmp_packet_duration_seconds_bucket{le="0.0256"} 0
+snmp_packet_duration_seconds_bucket{le="0.0512"} 0
+snmp_packet_duration_seconds_bucket{le="0.1024"} 0
+snmp_packet_duration_seconds_bucket{le="0.2048"} 0
+snmp_packet_duration_seconds_bucket{le="0.4096"} 0
+snmp_packet_duration_seconds_bucket{le="0.8192"} 0
+snmp_packet_duration_seconds_bucket{le="1.6384"} 0
+snmp_packet_duration_seconds_bucket{le="+Inf"} 0
+snmp_packet_duration_seconds_sum 0
+snmp_packet_duration_seconds_count 0
+# HELP snmp_packet_retries_total Number of SNMP packet retries.
+# TYPE snmp_packet_retries_total counter
+snmp_packet_retries_total 8
+# HELP snmp_packets_total Number of SNMP packet sent, including retries.
+# TYPE snmp_packets_total counter
+snmp_packets_total 8
+# HELP snmp_request_errors_total Errors in requests to the SNMP exporter
+# TYPE snmp_request_errors_total counter
+snmp_request_errors_total 0
+# HELP snmp_unexpected_pdu_type_total Unexpected Go types in a PDU.
+# TYPE snmp_unexpected_pdu_type_total counter
+snmp_unexpected_pdu_type_total 0

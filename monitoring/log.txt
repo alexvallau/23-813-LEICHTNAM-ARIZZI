@@ -1,0 +1,4 @@
+CONTAINER ID   IMAGE                       COMMAND                  CREATED         STATUS         PORTS                                       NAMES
+de2ffcd67a21   grafana/grafana             "/run.sh"                2 minutes ago   Up 2 minutes   0.0.0.0:3000->3000/tcp, :::3000->3000/tcp   grafana
+75c0b99c7449   prom/snmp-exporter:latest   "/bin/snmp_exporter …"   2 minutes ago   Up 2 minutes   0.0.0.0:9116->9116/tcp                      snmp-exporter
+1a2004d434f3   prom/prometheus             "/bin/prometheus --c…"   2 minutes ago   Up 2 minutes   0.0.0.0:9090->9090/tcp, :::9090->9090/tcp   prometheus

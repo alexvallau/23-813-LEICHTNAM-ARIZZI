@@ -1,0 +1,57 @@
+global:
+  scrape_interval: 1s
+
+scrape_configs:
+  - job_name: 'Prometheus'
+    static_configs:
+      - targets: ['localhost:9090']
+
+  - job_name: 'snmp-exporter-cisco'  
+    static_configs:  
+      - targets:  
+        - 10.100.4.1
+        - 10.100.4.2
+    scrape_interval: 1s  
+    scrape_timeout: 1s
+    metrics_path: /snmp
+    params:
+      auth: [public_v2]
+      module: [if_mib]
+    #file_sd_configs:
+      #- files:
+          #- './targets/snmp-targets/cisco.yml'  
+    relabel_configs:
+      - source_labels: [__address__]
+        target_label: __param_target
+      - source_labels: [__param_target]
+        target_label: instance
+      - target_label: __address__
+        replacement: snmp-exporter:9116
+
+  - job_name: 'blackbox'
+    metrics_path: /probe
+    params:
+      module: [http_2xx]  # Look for a HTTP 200 response.
+    static_configs:
+      - targets:
+        - http://10.100.4.4:8080 # Target to probe with http on port 8080.
+    relabel_configs:
+      - source_labels: [__address__]
+        target_label: __param_target
+      - source_labels: [__param_target]
+        target_label: instance
+      - target_label: __address__
+        replacement: blackbox:9115  # The blackbox exporter's real hostname:port.
+  - job_name: 'blackbox_exporter'  # collect blackbox exporter's operational metrics.
+    static_configs:
+      - targets: ['blackbox:9115']
+  
+  - job_name: cadvisor
+    scrape_interval: 5s
+    static_configs:
+    - targets:
+        - 10.100.4.4:8081
+
+  - job_name: 'node'
+    static_configs:
+      - targets: ['10.100.4.4:9100']

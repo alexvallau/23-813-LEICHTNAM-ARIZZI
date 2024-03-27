@@ -1,0 +1,4 @@
+- labels:
+    name: R1
+  targets:      #add your hosts
+  - 10.100.4.1
