@@ -20,5 +20,18 @@ Bien que Prometheus propose une visualisation native des données récupérées,
 
 ### Comparaison avec les concurrents
 
-Prometheus se distingue de ses concurrents par sa modernité, sa simplicité d'intégration et son langage de requête puissant, PromQL, offrant une analyse avancée des données de surveillance. En comparaison, Nagios bénéficie d'une large adoption professionnelle et d'une grande communauté, mais souffre d'une configuration complexe. Zabbix offre des fonctionnalités avancées avec une architecture extensible, mais sa configuration initiale peut être ardue. Par rapport à ces concurrents, Prometheus se démarque par son écosystème complet, comprenant des exportateurs, une base de données optimisée et des outils de visualisation, offrant ainsi une solution complète pour la surveillance et l'analyse des systèmes informatiques.
+Prometheus se démarque de ses concurrents par plusieurs aspects clés. 
+
+#### Nagios
+
+Nagios est souvent préféré pour sa longue histoire et sa large adoption dans les environnements professionnels. Il offre une surveillance des systèmes et des réseaux avec une interface web pour la gestion et la visualisation. Cependant, sa configuration peut être complexe et nécessiter un effort important. Malgré sa grande communauté et son support actif, Nagios peut être perçu comme moins moderne que Prometheus en raison de ses fonctionnalités parfois limitées et de son interface utilisateur moins intuitive.
+
+#### Zabbix
+
+Zabbix est reconnu pour ses fonctionnalités avancées de surveillance de la performance et de la disponibilité. Il propose une architecture extensible et modulaire, avec une gestion avancée des alertes et des notifications. Cependant, la configuration initiale de Zabbix peut être plus complexe que celle de Prometheus, et il peut nécessiter des ressources système plus importantes pour les déploiements à grande échelle. Malgré ses visualisations graphiques puissantes, l'interface utilisateur de Zabbix peut être considérée comme moins conviviale que celle de Prometheus.
+
+#### Conclusion
+
+Comparé à Nagios et Zabbix, Prometheus offre une solution plus moderne et flexible pour la surveillance des systèmes informatiques. Avec son écosystème complet, comprenant des exportateurs, une base de données optimisée et des outils de visualisation, Prometheus simplifie la collecte, le stockage et l'analyse des données de surveillance. Son langage de requête PromQL permet une analyse avancée des données, tandis que sa simplicité d'intégration en fait un choix attractif pour les environnements cloud-native et distribués.
+
 
