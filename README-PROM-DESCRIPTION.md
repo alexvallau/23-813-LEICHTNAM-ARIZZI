@@ -18,5 +18,7 @@ Les données collectées sont stockées dans une base de données locale spécia
 
 Bien que Prometheus propose une visualisation native des données récupérées, elle peut être considérée comme archaïque en termes de design et de fonctionnalités. Ainsi, l'utilisation d'outils tiers comme Grafana est souvent privilégiée. Grafana est relativement simple d'utilisation et nécessite simplement la création d'une connexion entre le serveur Prometheus et Grafana pour exploiter visuellement toutes les données récupérées.
 
-## Comparaison avec les concurrents
+### Comparaison avec les concurrents
+
+Prometheus se distingue de ses concurrents par sa modernité, sa simplicité d'intégration et son langage de requête puissant, PromQL, offrant une analyse avancée des données de surveillance. En comparaison, Nagios bénéficie d'une large adoption professionnelle et d'une grande communauté, mais souffre d'une configuration complexe. Zabbix offre des fonctionnalités avancées avec une architecture extensible, mais sa configuration initiale peut être ardue. Par rapport à ces concurrents, Prometheus se démarque par son écosystème complet, comprenant des exportateurs, une base de données optimisée et des outils de visualisation, offrant ainsi une solution complète pour la surveillance et l'analyse des systèmes informatiques.
 
