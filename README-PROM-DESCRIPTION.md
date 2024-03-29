@@ -1,6 +1,6 @@
 # Introduction
 
-Prometheus est un système de surveillance de parc informatique open source. Son rôle principal est de collecter et stocker les informations provenant de différents systèmes hétérogènes. Ces données peuvent inclure le flux de bits à travers l'interface d'un routeur ou les ressources utilisées par un système d'exploitation Linux. Elles sont ensuite stockées dans une base de données et peuvent être facilement exploitées ou représentées par des applications tierces.
+Prometheus est un système de surveillance de parc informatique open source. Son rôle principal est de collecter et stocker les informations provenant de différents systèmes hétérogènes. Ces données peuvent par exemple inclure le flux de bits à travers l'interface d'un routeur ou les ressources utilisées par un système d'exploitation Linux. Elles sont ensuite stockées dans une base de données et peuvent être facilement exploitées ou représentées par des applications tierces.
 
 ## Fonctionnement/interaction
 
