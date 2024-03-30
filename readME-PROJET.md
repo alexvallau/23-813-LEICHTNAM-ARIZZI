@@ -179,5 +179,47 @@ make docker-generate
 
 
 
+### BlackBox
+Blakckbox est un autre exporteur. Il nous servira à checker le status de différentes pages web en émettant des requêtes http
+
+#### Pourquoi?
+On peut vérifier si les pages web de nos serveurs sont accessibles.
+#### Pour qui?
+Dans notre projet, il nous a été demandé de déployer un site conteneurisé avec 3 pages web différentes.
+#### Les prérequis
+* Serveur: Avoir déployé le site web conteneurisé
+* Machine hôte: Avoir docker d'installé \
+Il faudra biensûr une connectivité réseau entre les différents éléments..
+#### Configuration
+Contrairement à SNMP-exporter, il y a très peu de choses à configurer. Nous devons simplement monter le conteneur et déclarer le job blackbox. Ce module est extrèmement bien documenté et la mise en place se fait naturellement, en suivant simplement le tutoriel de blackbox sur git.
+Une partie importante lors de la déclaration du job dans prométhéus.yml:
+``` yml
+  - job_name: 'blackbox'
+    metrics_path: /probe
+    params:
+      module: [http_2xx]  # Look for a HTTP 200 response.
+    static_configs:
+      - targets:
+        - http://10.100.4.4:8080 # Target to probe with http on port 8080.
+        - http://10.100.4.4:8080/page1.html
+        - http://10.100.4.4:8080/page2.html
+```
+On voit comment ajouter les pages que l'on souhaite monitorer.
+
+### node exporter
+Node exporter va nous servir à récupérer des informations sur des machines hôtes
+
+#### Pourquoi?
+On peut vérifier par exemple l'utilisation du CPU, de la RAM, la disponibilité de stockage..
+#### Pour qui?
+Dans notre projet, il nous a été demandé de déployer un site conteneurisé avec 3 pages web différentes.
+#### Les prérequis
+* Serveur: Avoir déployé le site web conteneurisé
+* Machine hôte: Avoir docker d'installé \
+Il faudra biensûr une connectivité réseau entre les différents éléments..
+#### Configuration
+
+
+
 
 
