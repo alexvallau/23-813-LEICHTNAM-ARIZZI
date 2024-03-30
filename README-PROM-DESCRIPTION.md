@@ -10,7 +10,7 @@ Pour décrire Prometheus, il est plus approprié de parler d'écosystème, car i
 
 Si nous devions comparer un exportateur à un métier, nous prendrions l'exemple de l'interprète. 
 Un interprète est capable de comprendre des informations dans une langue A, afin de  les retranscrire dans une langue B. 
-C'est exactement le rôle que jouera un exporteur entre un système donné, donc un système à qui l'on veut recueillir des informations, et prométhéus. L'exportateur demandera des informations au système(routeur, ordinateure) et les traduira dans un format que prométhéus est capable de comprendre et de stocker. De plus, prométhéus régira la candence à laquelle notre exporteur doit demander des informations au système. Concrètement: Les exportateurs sont des composants logiciels qui agissent comme des passerelles entre les applications ou les systèmes à surveiller et Prometheus. Ils permettent aux cibles de fournir des métriques au format compréhensible par Prometheus.
+C'est exactement le rôle que jouera un exportateur entre un système donné, donc un système à qui l'on veut recueillir des informations, et prométhéus. L'exportateur demandera des informations au système(routeur, ordinateure) et les traduira dans un format que prométhéus est capable de comprendre et de stocker. De plus, prométhéus régira la candence à laquelle notre exportateur doit demander des informations au système. Concrètement: Les exportateurs sont des composants logiciels qui agissent comme des passerelles entre les applications ou les systèmes à surveiller et Prometheus. Ils permettent aux cibles de fournir des métriques au format compréhensible par Prometheus.
 
 ### Base de données
 

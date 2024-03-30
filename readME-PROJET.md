@@ -17,14 +17,40 @@
 
 # Intération entre les différents éléments
 
-Ce que nous vous proposons ici est le fruit de plusieurs heures de travail et de recherche. Bien que les différents éléments présentés vont avoir une allure assez simple dans leur fonctionnement, il n'en reste pas moins qu'en partant de 0 il faut: Savoir ce que l'on veut, trouver ce que l'on veut et corriger les bugs.
+Ce que nous vous proposons ici est le fruit de plusieurs heures de travail et de recherche. Bien que les différents éléments présentés vont avoir une allure assez simple dans leurs fonctionnements, il n'en reste pas moins qu'en partant de 0 il faut: Savoir ce que l'on veut, trouver ce que l'on veut et corriger les bugs.
 
-Parlons de ce que nous voulions. EN  bon français, nous voulions déployer un outil de surveillance réseau. Cet outil devait être capable d'analyser plusieurs types de machines ainsi que plusieurs types de protocoles. Prométhéus, l'outil donc, sera le coeur de notre surveillance réseau en jouant plusieurs rôle. Il sera chargé, selon sa configuration, de faire des requêtes à ses différents exporteurs. A leurs tours, les exporteurs iront faire des requêtes aux différents noeuds(machine, routeur, switch etc..) et renverront les résultats à prométhéus. Prométhéus aura également un rôle de stockeur de données dans sa base PROMQL. Les possibilités visuelles de prométhéus restant assez maigres, il nous a été demandé d'utiliser grafana afin d'observer les données.
+Parlons de ce que nous voulions. En  bon français, nous voulions déployer un outil de surveillance réseau. Cet outil devait être capable d'analyser plusieurs types de machines ainsi que plusieurs types de protocoles. Prométhéus, l'outil donc, sera le coeur de notre surveillance réseau en jouant plusieurs rôles. Il sera chargé, selon sa configuration, de faire des requêtes à ses différents exportateurs. A leurs tours, les exportateurs iront faire des requêtes aux différents noeuds(machine, routeur, switch etc..) et renverront les résultats à prométhéus. Prométhéus aura également un rôle de stockeur de données dans sa base PROMQL. Les possibilités visuelles de prométhéus restant assez maigres, il nous a été demandé d'utiliser grafana afin d'observer les données.
+
+## Architecture de notre Dossier
+``` PS
+PS C:\Users\Arizzi Alexandre\Documents\Apprentissage\TRI\Master 1\Projet Monitoring\git\23-813-LEICHTNAM-ARIZZI\monitoring> tree /F
+Structure du dossier
+C:.
+│   [docker-compose.yml](https://github.com/alexvallau/23-813-LEICHTNAM-ARIZZI/blob/main/monitoring/docker-compose.yml)
+├───grafana
+│       datasource.yml
+│
+└───prometheus
+    │   prometheus.yml
+    │   prometheus.yml.old
+    │
+    ├───blackbox
+    │       blackbox.yml
+    │
+    └───snmp-exporter
+            snmp.yml
+```
+### Lien clicables 
+* [docker-compose.yml](https://github.com/alexvallau/23-813-LEICHTNAM-ARIZZI/blob/main/monitoring/docker-compose.yml)  
+* [datasource.yml](https://github.com/alexvallau/23-813-LEICHTNAM-ARIZZI/blob/main/monitoring/grafana/datasource.yml)
+* [prometheus.yml](https://github.com/alexvallau/23-813-LEICHTNAM-ARIZZI/blob/main/monitoring/prometheus/prometheus.yml)
+* [blackbox](https://github.com/alexvallau/23-813-LEICHTNAM-ARIZZI/blob/main/monitoring/prometheus/blackbox/blackbox.yml)
+* [snmp.yml](https://github.com/alexvallau/23-813-LEICHTNAM-ARIZZI/blob/main/monitoring/prometheus/snmp-exporter/snmp.yml)
 
 
 ## Conteneurisation
 
-Le lecteur est grand expert docker, nous ne détaillerons donc pas notre docker-compose. A la place, je ferai simplement le listing ce que qui a été déployé et où:
+Le lecteur est grand expert docker, nous ne détaillerons donc pas notre docker-compose. A la place, je ferai simplement le listing ce  qui a été déployé:
 
 Sur l'hôte de proméhétus(192.168.170.81):
 
@@ -41,3 +67,48 @@ Sur une machine linux monitorée(10.100.4.4):
 | Nom de conteneurs | Mappage des ports | Utilité                             |
 |-------------------|-------------------|-------------------------------------|
 | node-exporter     | 9100:9100         | Exportateur de métriques système   |
+
+## Comment Prométhéus commande t-il les différents exportateurs?
+
+C'est vrai ça! Comment le faire? Nous avons déployé pleins de conteneurs, mais comment intérragissent-ils entre eux? Que faut-il configurer afin que  prométhéus envoient ses directives? Comment configurer la fréquence? Comment ajouter de nouveaux jobs? C'est ce que nous voyons tout de suite.
+
+### Rôle du fichier prométhéus.yml
+
+Lorsque nous conteneurisons Prométhéus dans [docker-compose.yml](https://github.com/alexvallau/23-813-LEICHTNAM-ARIZZI/blob/main/monitoring/docker-compose.yml)  ,nous attachons à son image un fichier de configuration: [prometheus.yml](https://github.com/alexvallau/23-813-LEICHTNAM-ARIZZI/blob/main/monitoring/prometheus/prometheus.yml).
+C'est dans ce fichier que nous créerons l'intéraction entre prométhéus et ses différents agents, ses différents exportateurs. Dans ce fichier, nous configurons une "scrape_configs:", dans laquelle nous renseignons les différents travaux, "job" de prométhéus.
+Si nous prenons l'exemple de SNMP exporter:
+``` yml
+  - job_name: 'snmp-exporter-cisco'  # Configuration pour récupérer les métriques SNMP des appareils Cisco.
+    static_configs:
+      - targets: #Ici on renseigne
+        - 10.100.4.1 #Ip du routeur 1
+        - 10.100.4.2 #  Ip du routeur 2
+    scrape_interval: 1s  # Fréquence de rafraîchissement.
+    scrape_timeout: 1s  # Délai d'attente.
+    metrics_path: /snmp
+```
+Concrètement, on demande ici à prométhéus d'aller faire des requêtes toutes les 1 secondes à notre SNMP-exporter(lui aussi conteneurisé), qui ira lui même faire des requêtes aux cibles qui ont été indiquées dans notre fichier. 
+Tous les travaux,jobs de prométhéus fonctionnent de la même manière. Si l'on veut ajouter des novueaux jobs à notre environnement de moniroting, il faut  suivre, à quelque chose près, machinalement ces étapes:
+1. Dans le fichier docker-compose:
+   * J'ajoute Prométhéus avec son fichier de configuration prométhéus.yml
+   * J'ajoute mes différents exportateurs avec leurs fichiers de configuration(ex: snmp.yml)
+2. Dans prométhéus.yml:
+   * Je créé mes différents jobs vers mes exportateurs
+      * J'ajoute mes différentes cibles
+      * J'ajuste la fréquence de mes requêtes
+
+
+## Les différents exportateurs en place
+
+### SNMP-EXPORTER
+snmp-exporter est un module développé par les contributeurs de prométhéus.
+
+#### Pourquoi?
+Comme son nom l'indique, il sera chargé de faire des requêtes SNMP sur différents noeuds. Il renverra ensuite le résultat des noeuds, dans un format adapté, à prométhéus.
+#### Pour qui?
+Dans notre projet, il nous a été utile pour les deux routeurs cisco(10.100.4.1 et 10.100.4.2).
+#### Les prérequis
+* Routeurs: Avoir configuré SNMPV2 avec une communauté
+* Machine hôte: Avoir docker d'installé \
+Il faudra biensûr une connectivité réseau entre les différents éléments..
+
