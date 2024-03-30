@@ -40,13 +40,13 @@ C:.
     └───snmp-exporter
             snmp.yml
 ```
-### Lien clicables 
+### Lien clickables 
 * [docker-compose.yml](https://github.com/alexvallau/23-813-LEICHTNAM-ARIZZI/blob/main/monitoring/docker-compose.yml)  
 * [datasource.yml](https://github.com/alexvallau/23-813-LEICHTNAM-ARIZZI/blob/main/monitoring/grafana/datasource.yml)
 * [prometheus.yml](https://github.com/alexvallau/23-813-LEICHTNAM-ARIZZI/blob/main/monitoring/prometheus/prometheus.yml)
 * [blackbox](https://github.com/alexvallau/23-813-LEICHTNAM-ARIZZI/blob/main/monitoring/prometheus/blackbox/blackbox.yml)
 * [snmp.yml](https://github.com/alexvallau/23-813-LEICHTNAM-ARIZZI/blob/main/monitoring/prometheus/snmp-exporter/snmp.yml)
-
+* [generator.yml](https://github.com/alexvallau/23-813-LEICHTNAM-ARIZZI/blob/main/monitoring/generator.yml)
 
 ## Conteneurisation
 
@@ -144,4 +144,40 @@ modules:
       oid: 1.3.6.1.2.1.1.3
 ```
 Ce fichier n'est ni le fruit d'un copieé-collé et n'a ni été volé sur internet.
-Les concepteurs de SNMP exporteurs ont à la place développé un "snmp-generator" qui va nous générer le fichier ci-dessus.
+Les concepteurs de SNMP exporteurs ont développé un "snmp-generator" qui va nous générer le fichier ci-dessus.
+Le principe  du générateur est simple. On indique simplement les informations qui nous intéresse dans la base mib. Nous ne sommes même pas obligés d'indiquer les OID. Le generateur est assez bien développé pour retrouver lui même les oid des éléments qui nous intéréssent.
+Ainsi, si je cherche par exemple l'état de mes interfaces vrrp, je n'aurai qu'à indiquer "vrrpOperState":
+
+``` yml
+  if_mib:
+    walk: [sysUpTime, interfaces, ifXTable, vrrpOperState]
+``` 
+
+Que notre générateur traduira par:
+
+```yml
+    - name: vrrpOperState
+      oid: 1.3.6.1.2.1.68.1.3.1.3
+      type: gauge
+      help: The current state of the virtual router - 1.3.6.1.2.1.68.1.3.1.3
+      indexes:
+      - labelname: ifIndex
+        type: gauge
+      - labelname: vrrpOperVrId
+        type: gauge
+```
+
+Les étapes à suivre sont donc:
+1. Je clone le repo officiel de SNMP-exporter
+2. Je vais dans le dossier /snmp_exporter/generator
+3. Je modifie selon mes besoins le fichier generator.yml
+4. J'éxécute la commande suivante:
+```bash
+make docker-generate
+```
+5. Le fichier snmp.yml vient d'être généré,  je peux m'en servir pour mon conteneur snmp-exporteur.
+
+
+
+
+
