@@ -1,16 +1,16 @@
 # Introduction
 
-Prometheus est un système de surveillance de parc informatique open source. Son rôle principal est de collecter et stocker les informations provenant de différents systèmes hétérogènes. Ces données peuvent par exemple être le flux de bits à travers l'interface d'un routeur ou les ressources utilisées par un système d'exploitation Linux. Elles sont ensuite stockées dans une base de données et peuvent être facilement exploitées ou représentées par des applications tierces.
+Prometheus est un système de surveillance de parc informatique open source. Son rôle est de collecter et stocker les informations provenant de différents systèmes hétérogènes. Ces données peuvent par exemple être le flux de bits à travers l'interface d'un routeur ou les ressources utilisées par un système d'exploitation Linux. Elles sont ensuite stockées dans une base de données et peuvent être facilement exploitées ou représentées par des applications tierces.
 
 ## Fonctionnement/interaction
 
-Pour décrire Prometheus, il est plus approprié de parler d'écosystème, car il ne fonctionne pas seul. Pour comprendre au mieux Prometheus, nous détaillerons les éléments essentiels à son fonctionnement.
+Pour décrire Prometheus, il est plus approprié de parler d'écosystème, car il ne fonctionne pas seul. Pour le comprendre au mieux, nous détaillerons les éléments essentiels à son fonctionnement.
 
 ### Exportateur
 
 Si nous devions comparer un exportateur à un métier, nous prendrions l'exemple de l'interprète. 
-Un interprète est capable de comprendre des informations dans une langue A afin de  les retranscrire dans une langue B. 
-C'est exactement le rôle que jouera un exporteur entre un système donné, donc un système à qui l'on veut recueillir des informations, et prométhéus. L'exportateur demandera des informations au système et les traduira dans un format que prométhéus est capable de comprendre et de stocker. De plus, prométhéus régira la candence à laquelle notre exporteur doit demander des informations au système. Concrètement: Les exportateurs sont des composants logiciels qui agissent comme des passerelles entre les applications ou les systèmes à surveiller et Prometheus. Ils permettent aux cibles de fournir des métriques au format compréhensible par Prometheus.
+Un interprète est capable de comprendre des informations dans une langue A, afin de  les retranscrire dans une langue B. 
+C'est exactement le rôle que jouera un exporteur entre un système donné, donc un système à qui l'on veut recueillir des informations, et prométhéus. L'exportateur demandera des informations au système(routeur, ordinateure) et les traduira dans un format que prométhéus est capable de comprendre et de stocker. De plus, prométhéus régira la candence à laquelle notre exporteur doit demander des informations au système. Concrètement: Les exportateurs sont des composants logiciels qui agissent comme des passerelles entre les applications ou les systèmes à surveiller et Prometheus. Ils permettent aux cibles de fournir des métriques au format compréhensible par Prometheus.
 
 ### Base de données
 
