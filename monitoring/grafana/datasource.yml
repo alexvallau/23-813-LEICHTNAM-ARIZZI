@@ -1,5 +1,5 @@
 apiVersion: 1
-
+#Fichier de configuration de base de grafana
 datasources:
 - name: Prometheus
   type: prometheus

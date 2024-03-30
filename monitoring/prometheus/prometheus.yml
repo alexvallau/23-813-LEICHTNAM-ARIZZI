@@ -1,57 +1,57 @@
 global:
-  scrape_interval: 1s
+  scrape_interval: 1s  # Interval de rafraîchissement des métriques.
 
 scrape_configs:
-  - job_name: 'Prometheus'
+  - job_name: 'Prometheus'  # Configuration pour récupérer les métriques de Prometheus lui-même.
     static_configs:
-      - targets: ['localhost:9090']
+      - targets: ['localhost:9090']  # Adresse de Prometheus.
 
-  - job_name: 'snmp-exporter-cisco'  
-    static_configs:  
-      - targets:  
-        - 10.100.4.1
-        - 10.100.4.2
-    scrape_interval: 1s  
-    scrape_timeout: 1s
-    metrics_path: /snmp
-    params:
-      auth: [public_v2]
-      module: [if_mib]
-    #file_sd_configs:
-      #- files:
-          #- './targets/snmp-targets/cisco.yml'  
-    relabel_configs:
-      - source_labels: [__address__]
-        target_label: __param_target
-      - source_labels: [__param_target]
-        target_label: instance
-      - target_label: __address__
-        replacement: snmp-exporter:9116
-
-  - job_name: 'blackbox'
-    metrics_path: /probe
-    params:
-      module: [http_2xx]  # Look for a HTTP 200 response.
+  - job_name: 'snmp-exporter-cisco'  # Configuration pour récupérer les métriques SNMP des appareils Cisco.
     static_configs:
       - targets:
-        - http://10.100.4.4:8080 # Target to probe with http on port 8080.
+        - 10.100.4.1
+        - 10.100.4.2
+    scrape_interval: 1s  # Fréquence de rafraîchissement.
+    scrape_timeout: 1s  # Délai d'attente.
+    metrics_path: /snmp  # Chemin pour les métriques SNMP.
+    params:
+      auth: [public_v2]  # Paramètres d'authentification SNMP.
+      module: [if_mib]  # Module SNMP utilisé.
+    relabel_configs:
+      - source_labels: [__address__]
+        target_label: __param_target
+      - source_labels: [__param_target]
+        target_label: instance 
+      - target_label: __address__
+        replacement: snmp-exporter:9116  # Adresse du service de l'exporter SNMP.
+
+  - job_name: 'blackbox'  # Configuration pour effectuer des sondages HTTP.
+    metrics_path: /probe  # Chemin pour les métriques des sondages.
+    params:
+      module: [http_2xx]  # Type de réponse HTTP attendue.
+    static_configs:
+      - targets:
+        - http://10.100.4.4:8080  # Cible à sonder avec HTTP sur le port 8080.
+        - http://10.100.4.4:8080/page1..html
+        - http://10.100.4.4:8080/page2.html
     relabel_configs:
       - source_labels: [__address__]
         target_label: __param_target
       - source_labels: [__param_target]
         target_label: instance
       - target_label: __address__
-        replacement: blackbox:9115  # The blackbox exporter's real hostname:port.
-  - job_name: 'blackbox_exporter'  # collect blackbox exporter's operational metrics.
-    static_configs:
-      - targets: ['blackbox:9115']
-  
-  - job_name: cadvisor
-    scrape_interval: 5s
-    static_configs:
-    - targets:
-        - 10.100.4.4:8081
+        replacement: blackbox:9115  # Adresse du service de l'exporter Blackbox.
 
-  - job_name: 'node'
+  - job_name: 'blackbox_exporter'  # Configuration pour collecter les métriques  de l'exporter Blackbox.
     static_configs:
-      - targets: ['10.100.4.4:9100']
+      - targets: ['blackbox:9115']  # Adresse du service de l'exporter Blackbox.
+  
+  - job_name: cadvisor  # Configuration pour récupérer les métriques de cAdvisor.
+    scrape_interval: 5s  # Fréquence de rafraîchissement.
+    static_configs:
+      - targets:
+        - 10.100.4.4:8081  # Adresse de la cible cAdvisor.
+
+  - job_name: 'node'  # Configuration pour récupérer les métriques des nœuds.
+    static_configs:
+      - targets: ['10.100.4.4:9100']  # Adresse des nœuds.
