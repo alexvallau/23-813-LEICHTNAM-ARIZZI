@@ -150,7 +150,8 @@ Ainsi, si je cherche par exemple l'état de mes interfaces vrrp, je n'aurai qu'�
 
 ``` yml
   if_mib:
-    walk: [sysUpTime, interfaces, ifXTable, vrrpOperState]
+    walk: [....vrrpOperState...]
+.........
 ``` 
 
 Que notre générateur traduira par:
@@ -165,6 +166,7 @@ Que notre générateur traduira par:
         type: gauge
       - labelname: vrrpOperVrId
         type: gauge
+.........
 ```
 
 Les étapes à suivre sont donc:
@@ -207,17 +209,42 @@ Une partie importante lors de la déclaration du job dans prométhéus.yml:
 On voit comment ajouter les pages que l'on souhaite monitorer.
 
 ### node exporter
-Node exporter va nous servir à récupérer des informations sur des machines hôtes
+Node exporter va nous servir à récupérer des informations sur des machines hôtes.
 
 #### Pourquoi?
 On peut vérifier par exemple l'utilisation du CPU, de la RAM, la disponibilité de stockage..
 #### Pour qui?
-Dans notre projet, il nous a été demandé de déployer un site conteneurisé avec 3 pages web différentes.
+Dans notre projet, il nous a été demandé de déployer une machine linux à monitorer
 #### Les prérequis
-* Serveur: Avoir déployé le site web conteneurisé
-* Machine hôte: Avoir docker d'installé \
-Il faudra biensûr une connectivité réseau entre les différents éléments..
+* Machine à monitorer: Déployer docker-compsoe avec node-exporter 
+* Machine qui monitorera la machine linux: Configurer un job prométhéus qui ira requêter la machine à monitorer
 #### Configuration
+
+##### Depuis notre serveur prométhéus
+Nous avons simplement configuré le job suivant dans [prometheus.yml](https://github.com/alexvallau/23-813-LEICHTNAM-ARIZZI/blob/main/monitoring/prometheus/prometheus.yml) 
+``` yml
+  - job_name: 'node'
+    static_configs:
+      - targets: ['10.100.4.4:9100'] #machine linux à monitorer
+``` 
+##### Depuis la machine linux à monitorer
+
+a finir
+
+
+### cAdvisor
+cAdvisor va être utile à monitorer des conteneurs docker.
+
+#### Pourquoi?
+Afin de voir les ressources utilisés par le conteneur. Comme le CPU, la bande passante, la mémoire disponible etc..
+#### Pour qui?
+Dans notre projet, il nous a été demandé de monitorer les conteneurs de notre machine 
+#### Les prérequis
+* Machine à monitorer: avoir des conteneurs déployés. Installer cAdvisor
+* Machine qui monitorera la machine linux: Configurer un job prométhéus qui ira requêter la machine à monitorer
+#### Configuration
+
+
 
 
 
