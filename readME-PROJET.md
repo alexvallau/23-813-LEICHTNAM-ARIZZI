@@ -17,7 +17,7 @@
 
 # Intération entre les différents éléments
 
-Ce que nous vous proposons ici est le fruit de plusieurs heures de travail et de recherche. Bien que les différents éléments présentés vont avoir une allure assez simple dans leurs fonctionnements, il n'en reste pas moins qu'en partant de 0 il faut: Savoir ce que l'on veut, trouver ce que l'on veut et corriger les bugs.
+Ce que nous vous proposons ici est le fruit de plusieurs heures de travail et de recherche. Bien que les différents éléments présentés vont avoir une allure assez simple dans leurs fonctionnements, il n'en reste pas moins qu'en partant de 0 il faut: Savoir ce que l'on veut, trouver ce que l'on veut et corriger les bugs. Et ça, ça prend beaucoup de temps mine de rien.
 
 Parlons de ce que nous voulions. En  bon français, nous voulions déployer un outil de surveillance réseau. Cet outil devait être capable d'analyser plusieurs types de machines ainsi que plusieurs types de protocoles. Prométhéus, l'outil donc, sera le coeur de notre surveillance réseau en jouant plusieurs rôles. Il sera chargé, selon sa configuration, de faire des requêtes à ses différents exportateurs. A leurs tours, les exportateurs iront faire des requêtes aux différents noeuds(machine, routeur, switch etc..) et renverront les résultats à prométhéus. Prométhéus aura également un rôle de stockeur de données dans sa base PROMQL. Les possibilités visuelles de prométhéus restant assez maigres, il nous a été demandé d'utiliser grafana afin d'observer les données.
 
@@ -111,4 +111,37 @@ Dans notre projet, il nous a été utile pour les deux routeurs cisco(10.100.4.1
 * Routeurs: Avoir configuré SNMPV2 avec une communauté
 * Machine hôte: Avoir docker d'installé \
 Il faudra biensûr une connectivité réseau entre les différents éléments..
+#### Configuration
+Si nous regardons dans notre [docker-compose.yml](https://github.com/alexvallau/23-813-LEICHTNAM-ARIZZI/blob/main/monitoring/docker-compose.yml), nous observons au niveau du volume de snmp-exporter cette ligne:
 
+``` yml
+ - '/home/etudiant/monitoring/prometheus/snmp-exporter/snmp.yml:/etc/snmp_exporter/snmp.yml'
+ ```
+ Elle parraît presque annodine. En soit elle ne déclare qu'un fichier de configuration....
+
+ #### [snmp.yml](https://github.com/alexvallau/23-813-LEICHTNAM-ARIZZI/blob/main/monitoring/prometheus/snmp-exporter/snmp.yml)
+  
+Ce fichier est la clé de voûte de SNMP-exporter. Si on l'ouvre, on y verra énormément d'informations: des oid, des versions SNMP. Par exemple:
+``` YML
+# WARNING: This file was auto-generated using snmp_exporter generator, manual changes will be lost.
+auths:
+  public_v2:
+    community: 123test123 #On y retrouve la communauté configurée sur nos switchs
+    security_level: noAuthNoPriv
+    auth_protocol: MD5
+    priv_protocol: DES
+    version: 2
+modules:
+  if_mib:
+    walk:
+    - 1.3.6.1.2.1.31.1.1.1.10 # On y retrouve les différents OID qui nous seront utile plus tard, iHCoutOctets etc..
+    - 1.3.6.1.2.1.31.1.1.1.6
+    - 1.3.6.1.2.1.68.1.3.1.3
+    get:
+    - 1.3.6.1.2.1.1.3.0
+    metrics:
+    - name: sysUpTime
+      oid: 1.3.6.1.2.1.1.3
+```
+Ce fichier n'est ni le fruit d'un copieé-collé et n'a ni été volé sur internet.
+Les concepteurs de SNMP exporteurs ont à la place développé un "snmp-generator" qui va nous générer le fichier ci-dessus.
