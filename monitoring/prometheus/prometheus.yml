@@ -32,7 +32,7 @@ scrape_configs:
     static_configs:
       - targets:
         - http://10.100.4.4:8080  # Cible à sonder avec HTTP sur le port 8080.
-        - http://10.100.4.4:8080/page1..html
+        - http://10.100.4.4:8080/page1.html
         - http://10.100.4.4:8080/page2.html
     relabel_configs:
       - source_labels: [__address__]
