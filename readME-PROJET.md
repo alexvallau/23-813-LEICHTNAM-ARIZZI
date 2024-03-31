@@ -26,7 +26,7 @@ Parlons de ce que nous voulions. En  bon français, nous voulions déployer un o
 PS C:\Users\Arizzi Alexandre\Documents\Apprentissage\TRI\Master 1\Projet Monitoring\git\23-813-LEICHTNAM-ARIZZI\monitoring> tree /F
 Structure du dossier
 C:.
-│   [docker-compose.yml](https://github.com/alexvallau/23-813-LEICHTNAM-ARIZZI/blob/main/monitoring/docker-compose.yml)
+│   docker-compose.yml
 ├───grafana
 │       datasource.yml
 │
