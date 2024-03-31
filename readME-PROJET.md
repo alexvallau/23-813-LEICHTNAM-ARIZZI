@@ -67,6 +67,7 @@ Sur une machine linux monitorée(10.100.4.4):
 | Nom de conteneurs | Mappage des ports | Utilité                             |
 |-------------------|-------------------|-------------------------------------|
 | node-exporter     | 9100:9100         | Exportateur de métriques système   |
+| cAdvisor     | 8081:8081         | Exportateur de métriques système   |
 
 ## Comment Prométhéus commande t-il les différents exportateurs?
 
@@ -244,6 +245,15 @@ Dans notre projet, il nous a été demandé de monitorer les conteneurs de notre
 * Machine qui monitorera la machine linux: Configurer un job prométhéus qui ira requêter la machine à monitorer
 #### Configuration
 
+##### Depuis notre serveur prométhéus
+Nous avons simplement configuré le job suivant dans [prometheus.yml](https://github.com/alexvallau/23-813-LEICHTNAM-ARIZZI/blob/main/monitoring/prometheus/prometheus.yml) 
+``` yml
+  - job_name: cadvisor
+    scrape_interval: 5s
+    static_configs:
+    - targets:
+        - 10.100.4.4:8081 #Cible
+``` 
 
 ## Grafana
 Quelques screenshot..
