@@ -20,6 +20,9 @@ Les données collectées sont stockées dans une base de données locale spécia
 
 Bien que Prometheus propose nativement une visualisation  des données récupérées, elle peut être considérée comme archaïque en termes de design et de fonctionnalités. Ainsi, l'utilisation d'outils tiers comme Grafana est souvent privilégiée. Grafana est relativement simple d'utilisation et nécessite simplement la création d'une connexion entre le serveur Prometheus et Grafana pour exploiter visuellement toutes les données récupérées.
 
+### Alertes
+Prométhéus est doté d'un système d'alertes. Ce système, comme sur grafana, fonctionnera avec des conditions à établir. Si ces conditions sont atteintes, l'alerte se déclenchera. Il est également possible de notifier l'alerte par mail.
+
 ### Schéma issu de la documentatioon
 ![Texte alternatif](./images/architecture.png "Titre de l'image")
 
@@ -41,8 +44,7 @@ Prometheus et Nagios offrent différentes fonctionnalités. Nagios se concentre 
 - Les visualisations fournies par Prometheus ne répondent pas totalement aux besoins actuels, nécessitant souvent l'utilisation d'outils supplémentaires comme Grafana.
 - Nagios propose des tableaux de bord adaptés à la surveillance des réseaux et des infrastructures, mais manque de graphiques pour les problèmes liés aux applications.
 
-#### Alertes
-Prométhéus est doté d'un système d'alertes. Ce système, comme sur grafana, fonctionnera avec des conditions à établir. Si ces conditions sont atteintes, l'alerte se déclenchera. Il est également possible de notifier l'alerte par mail.
+
 
 #### Configuration et Maintenance
 - La configuration initiale de Prometheus est plus simple grâce à des images Docker, tandis que Nagios nécessite une configuration plus complexe.
