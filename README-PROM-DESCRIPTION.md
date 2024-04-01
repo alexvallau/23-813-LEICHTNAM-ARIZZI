@@ -20,6 +20,10 @@ Les données collectées sont stockées dans une base de données locale spécia
 
 Bien que Prometheus propose nativement une visualisation  des données récupérées, elle peut être considérée comme archaïque en termes de design et de fonctionnalités. Ainsi, l'utilisation d'outils tiers comme Grafana est souvent privilégiée. Grafana est relativement simple d'utilisation et nécessite simplement la création d'une connexion entre le serveur Prometheus et Grafana pour exploiter visuellement toutes les données récupérées.
 
+### Schéma issu de la documentatioon
+![Texte alternatif](./images/architecture.png "Titre de l'image")
+
+
 ### Comparaison avec les concurrents
 
 Les principaux concurents de Prométhéus sont Zabbix et Nagios. Nous commencerons par comparer Nagios et Prométhéus, ce qui nous aidera à consolider nos bases sur prométhéus. Nous parlerons ensuite de Zabbix seul.
