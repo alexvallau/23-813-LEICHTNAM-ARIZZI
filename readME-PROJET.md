@@ -26,7 +26,7 @@
     - [Pour qui?](#pour-qui)
     - [Les prérequis](#les-prérequis)
     - [Configuration](#configuration)
-    - [snmp.yml](#snmpyml)
+    - [SNMP GENERATOR](#SNMP-GENERATOR)
   - [BlackBox](#blackbox)
     - [Pourquoi?](#pourquoi-1)
     - [Pour qui?](#pour-qui-1)
@@ -147,6 +147,7 @@ Dans notre projet, il nous a été utile pour les deux routeurs cisco(10.100.4.1
 * Machine hôte: Avoir docker d'installé \
 Il faudra biensûr une connectivité réseau entre les différents éléments..
 #### Configuration
+##### SNMP-GENERATOR
 Si nous regardons dans notre [docker-compose.yml](https://github.com/alexvallau/23-813-LEICHTNAM-ARIZZI/blob/main/monitoring/docker-compose.yml), nous observons au niveau du volume de snmp-exporter cette ligne:
 
 ``` yml
