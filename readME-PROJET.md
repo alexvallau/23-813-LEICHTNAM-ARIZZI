@@ -69,12 +69,12 @@ Sur une machine linux monitorée(10.100.4.4):
 
 ## Comment Prométhéus commande t-il les différents exportateurs?
 
-C'est vrai ça! Comment le faire? Nous avons déployé pleins de conteneurs, mais comment intérragissent-ils entre eux? Que faut-il configurer afin que  prométhéus envoient ses directives? Comment configurer la fréquence? Comment ajouter de nouveaux jobs? C'est ce que nous voyons tout de suite.
+C'est vrai ça! Comment le faire? Nous avons déployé pleins de conteneurs, mais comment intérragissent-ils entre eux? Que faut-il configurer afin que  prométhéus envoient ses directives(j'entends par là, comment prométhéus communique avec ses exportateurs)? Comment configurer la fréquence? Comment ajouter de nouveaux jobs? C'est ce que nous voyons tout de suite.
 
 ### Rôle du fichier prométhéus.yml
 
 Lorsque nous conteneurisons Prométhéus dans [docker-compose.yml](https://github.com/alexvallau/23-813-LEICHTNAM-ARIZZI/blob/main/monitoring/docker-compose.yml)  ,nous attachons à son image un fichier de configuration: [prometheus.yml](https://github.com/alexvallau/23-813-LEICHTNAM-ARIZZI/blob/main/monitoring/prometheus/prometheus.yml).
-C'est dans ce fichier que nous créerons l'intéraction entre prométhéus et ses différents agents, ses différents exportateurs. Dans ce fichier, nous configurons une "scrape_configs:", dans laquelle nous renseignons les différents travaux, "job" de prométhéus.
+C'est dans ce fichier que l'on indique à prométhéus comment communiquer avec ses exportateurs et avec qui ses exportateurs doivent échanger.Dans ce fichier, nous configurons une "scrape_configs:", dans laquelle nous renseignons les différents travaux, "job" de prométhéus.
 Si nous prenons l'exemple de SNMP exporter:
 ``` yml
   - job_name: 'snmp-exporter-cisco'  # Configuration pour récupérer les métriques SNMP des appareils Cisco.
