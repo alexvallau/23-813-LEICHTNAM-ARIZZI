@@ -156,7 +156,7 @@ filename="$4"
 ```
 
 Ainsi, notre crontab ressemblera à:
-```bash
+``` bash
 * * * * * /home/etudiant/snmp-2.sh 1.3.6.1.2.1.31.1.1.1.6.3 10.100.4.2 123test123 /home/etudiant/data
 ``` 
 
