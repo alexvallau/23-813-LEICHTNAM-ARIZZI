@@ -22,18 +22,51 @@ Bien que Prometheus propose nativement une visualisation  des données récupér
 
 ### Comparaison avec les concurrents
 
-Prometheus se démarque de ses concurrents par plusieurs aspects clés. 
+Les principaux concurents de Prométhéus sont Zabbix et Nagios. Nous commencerons par comparer Nagios et Prométhéus, ce qui nous aidera à consolider nos bases sur prométhéus. Nous parlerons ensuite de Zabbix seul.
 
-#### Nagios
+#### Comparaison entre Prometheus et Nagios
 
-Nagios est souvent préféré pour sa longue histoire et sa large adoption dans les environnements professionnels. Il offre une surveillance des systèmes et des réseaux avec une interface web pour la gestion et la visualisation. Cependant, sa configuration peut être complexe et nécessiter un effort important. Malgré sa grande communauté et son support actif, Nagios peut être perçu comme moins moderne que Prometheus en raison de ses fonctionnalités parfois limitées et de son interface utilisateur moins intuitive.
+#### Capacités
+Prometheus et Nagios offrent différentes fonctionnalités. Nagios se concentre principalement sur le trafic réseau et la sécurité des applications, tandis que Prometheus s'intéresse davantage aux applications de son infrastructure
+
+#### Collecte de données
+- Prometheus collecte des données à partir des exportateurs expliqués en début de ce document.
+- Nagios utilise des agents installés sur les différents noeuds du réseau surveillés.
+
+#### Visualisations
+- Les visualisations fournies par Prometheus ne répondent pas totalement aux besoins actuels, nécessitant souvent l'utilisation d'outils supplémentaires comme Grafana.
+- Nagios propose des tableaux de bord adaptés à la surveillance des réseaux et des infrastructures, mais manque de graphiques pour les problèmes liés aux applications.
+
+#### Configuration et Maintenance
+- La configuration initiale de Prometheus est plus simple grâce à des images Docker, tandis que Nagios nécessite une configuration plus complexe.
+- Les intégrations de Prometheus sont vastes grâce à sa capacité à écrire de nouveaux exportateurs, tandis que Nagios a une liste d'intégrations officielles limitée.
+
+#### Alertes
+- Prometheus propose Alertmanager pour définir des seuils et déclencher des alertes en cas de dépassement.
+- Nagios utilise divers canaux tels que l'e-mail et les SMS pour les alertes.
+
+#### Communauté
+- La communauté de Prometheus est plus active et en constante évolution, tandis que Nagios connaît un développement plus lent.
 
 #### Zabbix
 
-Zabbix est reconnu pour ses fonctionnalités avancées de surveillance de la performance et de la disponibilité. Il propose une architecture extensible et modulaire, avec une gestion avancée des alertes et des notifications. Cependant, la configuration initiale de Zabbix peut être plus complexe que celle de Prometheus, et il peut nécessiter des ressources système plus importantes pour les déploiements à grande échelle. Malgré ses visualisations graphiques puissantes, l'interface utilisateur de Zabbix peut être considérée comme moins conviviale que celle de Prometheus.
+#### Capacités
 
-#### Conclusion
+Zabbix est un outil de surveillance complet pour les serveurs, les applications ains que les bases de données. Il offre des fonctionnalités de surveillance des performances, du dépannage, de la sécurité et de la détection des menaces. Zabbix est adapté à la surveillance d'une infrastructure disposant jusqu'à 1000 end-point
 
-Comparé à Nagios et Zabbix, Prometheus offre une solution plus moderne et flexible pour la surveillance des systèmes informatiques. Avec son écosystème complet, comprenant des exportateurs, une base de données optimisée et des outils de visualisation, Prometheus simplifie la collecte, le stockage et l'analyse des données de surveillance. Son langage de requête PromQL permet une analyse avancée des données, tandis que sa simplicité d'intégration en fait un choix attractif pour les environnements cloud-native et distribués.
+#### Collecte de données
 
+Zabbix peut collecter des données à partir de diverses sources, y compris SNMP, JMX, IPMI, et d'autres protocoles. Comme nagios, il dispose d'un agent installable sur différents systèmes.
+
+#### Visualisations
+
+En termes de visualisation, Zabbix offre des tableaux de bord et des graphiques mais nécéssite également grafana
+
+#### Configuration et maintenance
+
+Zabbix nécessite une configuration initiale plus complexe par rapport à certains autres outils de surveillance. La maintenance de Zabbix peut être relativement simple une fois qu'il est correctement configuré, avec des mises à jour régulières et la gestion des alertes.
+
+#### Communauté
+
+Zabbix bénéficie d'une communauté active d'utilisateurs et de contributeurs, bien que peut-être moins importante que celle de certaines autres solutions de surveillance. Il existe des forums, des groupes de discussion et d'autres ressources en ligne pour obtenir de l'aide et des conseils sur Zabbix.
 
