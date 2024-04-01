@@ -12,6 +12,42 @@
      * node-exporter 
        * Montrer les différentes config sur la machine hôte
 
+## Sommaire
+
+- [Quelques idées](#quelques-idées)
+- [Architecture de notre Dossier](#architecture-de-notre-dossier)
+  - [Lien clickables](#lien-clickables)
+- [Conteneurisation](#conteneurisation)
+- [Comment Prométhéus commande t-il les différents exportateurs?](#comment-prométhéus-commande-t-il-les-différents-exportateurs)
+  - [Rôle du fichier prométhéus.yml](#rôle-du-fichier-prométhéusyml)
+- [Les différents exportateurs en place](#les-différents-exportateurs-en-place)
+  - [SNMP-EXPORTER](#snmp-exporter)
+    - [Pourquoi?](#pourquoi)
+    - [Pour qui?](#pour-qui)
+    - [Les prérequis](#les-prérequis)
+    - [Configuration](#configuration)
+    - [snmp.yml](#snmpyml)
+  - [BlackBox](#blackbox)
+    - [Pourquoi?](#pourquoi-1)
+    - [Pour qui?](#pour-qui-1)
+    - [Les prérequis](#les-prérequis-1)
+    - [Configuration](#configuration-1)
+  - [Node Exporter](#node-exporter)
+    - [Pourquoi?](#pourquoi-2)
+    - [Pour qui?](#pour-qui-2)
+    - [Les prérequis](#les-prérequis-2)
+    - [Configuration](#configuration-2)
+  - [cAdvisor](#cadvisor)
+    - [Pourquoi?](#pourquoi-3)
+    - [Pour qui?](#pour-qui-3)
+    - [Les prérequis](#les-prérequis-3)
+    - [Configuration](#configuration-3)
+- [Grafana](#grafana)
+  - [Blackbox](#blackbox-1)
+  - [cAdvisor](#cadvisor-1)
+  - [Node exporter](#node-exporter-1)
+  - [SNMP exporter](#snmp-exporter-1)
+
 
 
 
@@ -133,7 +169,7 @@ auths:
 modules:
   if_mib:
     walk:
-    - 1.3.6.1.2.1.31.1.1.1.10 # On y retrouve les différents OID qui nous seront utile plus tard, iHCoutOctets etc..
+    - 1.3.6.1.2.1.31.1.1.1.10 # On y retrouve les différents OID qui nous seront utiles plus tard, iHCoutOctets etc..
     - 1.3.6.1.2.1.31.1.1.1.6
     - 1.3.6.1.2.1.68.1.3.1.3
     get:
@@ -142,9 +178,9 @@ modules:
     - name: sysUpTime
       oid: 1.3.6.1.2.1.1.3
 ```
-Ce fichier n'est ni le fruit d'un copieé-collé et n'a ni été volé sur internet.
+Ce fichier n'est ni le fruit d'un copié-collé et n'a ni été volé sur internet.
 Les concepteurs de SNMP exporteurs ont développé un "snmp-generator" qui va nous générer le fichier ci-dessus.
-Le principe  du générateur est simple. On indique simplement les informations qui nous intéresse dans la base mib. Nous ne sommes même pas obligés d'indiquer les OID. Le generateur est assez bien développé pour retrouver lui même les oid des éléments qui nous intéréssent.
+Le principe  du générateur est simple. On indique les informations qui nous intéressent dans la base mib. Nous ne sommes même pas obligés d'indiquer les OID. Le generateur est assez bien développé pour retrouver lui même les oid des éléments qui nous intéressent.
 Ainsi, si je cherche par exemple l'état de mes interfaces vrrp, je n'aurai qu'à indiquer "vrrpOperState":
 
 ``` yml
