@@ -117,14 +117,14 @@ SNMPv2-SMI::mib-2.68.1.3.1.9.2.1 = INTEGER: 1
 
 Les colonnes de la vrrpOperTable peuvent inclure des informations telles que :
 
-vrrpOperState: L'état opérationnel de l'instance VRRP (par exemple, master, backup).
-vrrpOperAdminState: L'état administratif de l'instance VRRP (par exemple, up, down).
-vrrpOperPriority: La priorité de l'instance, utilisée pour déterminer le routeur maître.
-vrrpOperVirtualMacAddr: L'adresse MAC virtuelle utilisée par cette instance VRRP.
-vrrpOperMasterIpAddr: L'adresse IP du routeur maître actuel.
-vrrpOperMasterRouterId: L'identifiant du routeur maître, souvent l'adresse IP du routeur.
-vrrpOperAuthType: Le type d'authentification utilisé (si applicable).
-vrrpOperAdvertisementInterval: L'intervalle à laquelle les annonces VRRP sont envoyées.
+vrrpOperState: L'état opérationnel de l'instance VRRP (par exemple, master, backup).  
+vrrpOperAdminState: L'état administratif de l'instance VRRP (par exemple, up, down).  
+vrrpOperPriority: La priorité de l'instance, utilisée pour déterminer le routeur maître.  
+vrrpOperVirtualMacAddr: L'adresse MAC virtuelle utilisée par cette instance VRRP.  
+vrrpOperMasterIpAddr: L'adresse IP du routeur maître actuel.  
+vrrpOperMasterRouterId: L'identifiant du routeur maître, souvent l'adresse IP du routeur.  
+vrrpOperAuthType: Le type d'authentification utilisé (si applicable).  
+vrrpOperAdvertisementInterval: L'intervalle à laquelle les annonces VRRP sont envoyées.  
 
 L'index de cette table est souvent constitué de deux parties : l'identifiant de l'interface sur laquelle l'instance VRRP est configurée et l'ID de l'instance VRRP elle-même. Cela permet d'identifier de manière unique chaque entrée dans la table dans le cas où plusieurs instances VRRP opèrent sur le même appareil.
 
