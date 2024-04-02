@@ -185,7 +185,7 @@ Iperf mesure le débit au niveau de la couche de transport (TCP ou UDP), tandis 
  _Les compteurs d’octets sont disponibles en version 32 bits (ifInOctets, ifOutOctets) ou en version 64 bits (ifHCInOctets, ifHCOutOctets). Justifier précisément quels OID il faut utiliser._
 
 ### Réponse 18
-Nous utiliserons l'OID de l'interface out en 64 bits
+Il est recommandé d'utiliser les compteurs 64 bits (ifHCInOctets, ifHCOutOctets) pour mesurer le trafic réseau, car ils permettent de suivre une plus grande quantité de données sans risque de débordement, contrairement aux compteurs 32 bits (ifInOctets, ifOutOctets) qui peuvent rapidement atteindre leur limite sur des liaisons à haut débit. Les compteurs 64 bits offrent ainsi une précision accrue pour les mesures de débit sur les réseaux modernes et rapides.
 
 ### Question 19
 _Décrire une manipulation « simple » permettant de trouver le débit entrant ou sortant
