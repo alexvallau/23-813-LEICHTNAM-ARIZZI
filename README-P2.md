@@ -26,7 +26,8 @@ SNMPv2-MIB::sysContact.0 = STRING: "leichtnam"
 _Rappeler l’encodage utilisé lors de l’émission de données en SNMP._
 
 ### Réponse 10
- L'encodage utilisé est BER. Cet encodage intervient lors de la mise en trame des données SNMP.
+
+Dans SNMP, les données sont transmises en utilisant un format d'encodage spécifique appelé ASN.1, associé aux Basic Encoding Rules (BER). ASN.1, ou Abstract Syntax Notation One, est un ensemble de règles pour structurer les données, tandis que les BER déterminent comment ces structures de données sont converties en séquences d'octets pour la transmission. Ce mécanisme standardise la communication entre les différents dispositifs de réseau, permettant ainsi à un système de gestion de réseau de comprendre et de contrôler efficacement les informations reçues des agents SNMP, malgré la diversité des appareils et des fabricants.
 
 
 ### Question 11
