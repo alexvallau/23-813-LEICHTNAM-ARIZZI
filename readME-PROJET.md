@@ -37,7 +37,7 @@
     - [Pour qui?](#pour-qui-3)
     - [Les prérequis](#les-prérequis-3)
     - [Configuration](#configuration-3)
-  - [PromQL](#promql)
+- [PromQL](#promql)
 - [Grafana](#grafana)
   - [Blackbox](#blackbox-1)
   - [cAdvisor](#cadvisor-1)
