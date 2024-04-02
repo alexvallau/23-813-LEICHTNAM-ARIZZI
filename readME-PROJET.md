@@ -284,6 +284,18 @@ Nous avons simplement configuré le job suivant dans [prometheus.yml](https://gi
     - targets:
         - 10.100.4.4:8081 #Cible
 ``` 
+## PromQL
+PromQL est le langage de requête de Prometheus, qui permet de récupérer et de manipuler les métriques de surveillance pour analyser les performances des systèmes informatiques de manière avancée et précise. Il offre des fonctionnalités telles que le filtrage, l'agrégation et le calcul de tendances, facilitant ainsi la surveillance efficace des environnements informatiques.
+
+Exemple de requete promql : 
+
+ifHighSpeed{job="snmp-exporter-cisco"} 
+
+
+rate(ifOutOctets{job="snmp-exporter-cisco", instance="10.100.4.1"}[5m])
+
+
+
 
 ## Grafana
 Quelques screenshot..
