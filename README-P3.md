@@ -9,7 +9,7 @@ par exemple en utilisant la fonction sleep. Pourquoi est-il plus pertinent d’u
 systemd plutôt que la fonction sleep._
 
 ### Réponse 20
-Le cron appelera ponctuellement le script pour qu'il s'exécute. SI nous utilisons seulement une fonction sleep, cela signifique que le script est lancé constamment, ce qui utilise des ressources inutilement.
+L'utilisation de Cron ou des timers systemd pour automatiser les mesures de débit réseau est préférable à la fonction sleep, car cela garantit une exécution périodique et fiable du script sans qu'il doive rester actif en permanence. Ces outils gèrent l'exécution des tâches en arrière-plan de manière efficace, permettant ainsi une meilleure gestion des ressources et assurant la continuité des mesures, même en cas de redémarrage du système ou d'interruptions du script.
 
 
 ### 5.1 Récupération du compteur d’octets
