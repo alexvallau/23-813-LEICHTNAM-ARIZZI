@@ -291,9 +291,10 @@ PromQL est le langage de requête de Prometheus, qui permet de récupérer et de
 Exemple de requete promql : 
 
 ifHighSpeed{job="snmp-exporter-cisco"} 
-
+![Texte alternatif](./images/promql1.png "Titre de l'image")
 
 rate(ifOutOctets{job="snmp-exporter-cisco", instance="10.100.4.1"}[5m])
+![Texte alternatif](./images/promql2.png "Titre de l'image")
 
 
 
