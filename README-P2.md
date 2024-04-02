@@ -149,7 +149,7 @@ Le parefeu sur lequel nous ajouté une exception est le parefeu de la machine B.
 _Quel est le protocole de transport utilisé pour le test de débit entre les deux machines ?_
 
 ### Réponse 16
-Le protocole utilisé est UDP
+Le protocole utilisé est UDP, on utilise UDP pour les tests de débit car ce protocole offre une transmission rapide des données sans se préoccuper de l'établissement de connexion, de la vérification des erreurs, ou de l'ordre de livraison des paquets. Cela le rend idéal pour mesurer la performance maximale du réseau et pour évaluer le comportement des applications temps réel qui peuvent tolérer une certaine perte de données mais exigent une faible latence.
 
 ### Question 17
 _Pourquoi selon vous le débit calculé par capinfos est légèrement plus élevé que le débit généré par iperf ?_
