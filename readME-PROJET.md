@@ -4,7 +4,7 @@ Dans le cadre de notre projet, il nous a été demandé de  déployer un outil d
 
 ## Sommaire
 
-- [Quelques idées](#quelques-idées)
+
 - [Architecture de notre Dossier](#architecture-de-notre-dossier)
   - [Lien clickables](#lien-clickables)
 - [Conteneurisation](#conteneurisation)
@@ -287,8 +287,16 @@ rate(ifOutOctets{job="snmp-exporter-cisco", instance="10.100.4.1"}[5m])
 
 
 
+
 ## Grafana
-Quelques screenshot..
+Nous ne détaillerons pas grand chose ici mise à part la déclaration des alertes.
+
+### Alertes
+Nous avons créé des alertes à un seuil de 50 bits.
+Nous pouvons voir sur l'image ci-dessous, au niveau des pointillets verticaux les moments ou elles sont déclenchées.
+
+
+Une fois que ces alertes sont déclenchées, nous nous servons d'un serveur google smtp afin d'envoyer des mail d'alerte:
 
 ### Blackbox
 ![Texte alternatif](./images/BLACKBOX.png "Titre de l'image")
