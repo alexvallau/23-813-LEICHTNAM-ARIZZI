@@ -1,4 +1,4 @@
-# 5 Script bash de mesure de débit en SNMP
+# Script bash de mesure de débit en SNMP
 
 Dans cette partie, nous allons développer un script bash récupérant, via le protocole SNMP, des informations sur les interfaces de nos routeurs. Nous nous limiterons  à la récupération du nombre d'octet en sortie de notre routeur R2. Avec ces données et un peu de bon sens, nous serons capable de déterminer le débit sortant de l'interface de notre routeur. 
 
