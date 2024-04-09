@@ -1,7 +1,15 @@
 # SYNTHESE PROMETHEUS
 
-
-
+### SOMMAIRE
+- [Introduction](#Introduction)
+  - [Fonctionnement/interaction](#Fonctionnement/interaction)
+     - [Exportateur](#Exportateur)
+     - [Base de données](#Base-de-données)
+     - [Visualisation des données](#Visualisation-des-données)
+     - [Alertes](#Alertes)
+     - [Schéma issu de la documentatioon](#Schéma-issu-de-la-documentatioon)
+  - [Comparaison avec les concurrents](#Comparaison-avec-les-concurrents)
+  
 # Introduction
 
 Prometheus est un système de surveillance de parc informatique open source. Son rôle est de collecter et stocker les informations provenant de différents systèmes hétérogènes. Ces données peuvent par exemple être le flux de bits à travers l'interface d'un routeur ou les ressources utilisées par un système d'exploitation Linux. Elles sont ensuite stockées dans une base de données et peuvent être facilement exploitées ou représentées par des applications tierces.
@@ -31,7 +39,7 @@ Prométhéus est doté d'un système d'alertes. Ce système, comme sur grafana, 
 ![Texte alternatif](./images/architecture.png "Titre de l'image")
 
 
-### Comparaison avec les concurrents
+## Comparaison avec les concurrents
 
 Les principaux concurents de Prométhéus sont Zabbix et Nagios. Nous commencerons par comparer Nagios et Prométhéus, ce qui nous aidera à consolider nos bases sur prométhéus. Nous parlerons ensuite de Zabbix seul.
 
