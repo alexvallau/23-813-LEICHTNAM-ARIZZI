@@ -4,7 +4,7 @@
 ## PARTIE 1
 
 ### SOMMAIRE
-- [Etude théorique préparatoire](#Etude théorique préparatoire)
+- [Etude théorique préparatoire](#Etude-théorique-préparatoire)
 ## Etude théorique préparatoire
 
 #### Question 1 
