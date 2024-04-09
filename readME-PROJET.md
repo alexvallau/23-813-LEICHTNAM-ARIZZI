@@ -1,11 +1,4 @@
-# Brouillon
-### Quelques idées
-* Schéma sur le fonctionnement général de notre infra
-* Expliquer les intéractions entre les diff éléments:
-  * Expliquer les différentes applications présentes
-     * cadvisor
-     * node-exporter 
-       * Montrer les différentes config sur la machine hôte
+
 
 ## Sommaire
 
