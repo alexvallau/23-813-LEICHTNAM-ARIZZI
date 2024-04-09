@@ -311,6 +311,16 @@ L'image est assez peu explicite mais il faut comprendre que C représente le nom
 ### SNMP exporter
 ![Texte alternatif](./images/snmp-exporter.png "Titre de l'image")
 
+## Conclusion générale et difficultés
+
+Pour commencer de manière  ordinaire, ce projet a été extrêmement intéréssant car nous avons pu travailler sur beaucoup de systèmes différents. Cela nous a permis par exemple de nous remettre dans le bain pour les commandes cisco, de recomprendre le mécanisme docker avec ses volumes, ses images, et de découvrir des protocoles tels que VRRP. Par dessus tout ça, nous avons travaillé avec prométhéus, quelque chose de nouveau pour M. Arizzi et M. LEICHTNAM et qui sera certainement utile un jour ou l'autre en entreprise. Nous avon beaucoup aimé l'autonomie qui nous as été accordée au cours de ce projet, nous prouvant que, moyennant un travail certain, nous avons été capables de compléter quasiment tout le projet demandé, sans l'aide d'autres groupes, self-made.
+Le plus dur pour nous dans ce projet a été de trouver les outils et de comment les exploiter. Mettez-vous à notre place, nous avons dû découvrir prométhéus entièrement, découvrir ses relations avec ses exportateurs, trouver le "SNMP-GENERATOR" et le faire fonctionner etc....
+A celà, et même si vous êtes sur la bonne voie, s'ajoute les bugs, la mauvaise indentation, qui vous font parfois douter: "est-ce que c'est bien ça que je dois faire"- .
+En terme de temps de travail, nous avons dû ajouter au moins 20 h supplémentaires aux séances.
+Nous comptons ici la finalisation du projet + la rédaction des différents documents.
+Mais pour rester sur une note positive; nous avons beaucoup appris. + de projets svp
+
+
 
 
 
