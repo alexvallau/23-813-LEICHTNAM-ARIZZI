@@ -5,6 +5,16 @@
 
 ### SOMMAIRE
 - [Etude théorique préparatoire](#Etude-théorique-préparatoire)
+  - Question 1
+  - Question 2
+  - Question 3
+  - Question 4
+- [Mise en place et configuration des machines virtuelles](#Mise-en-place-et-configuration-des-machines-virtuelles)
+  - Question 5
+  - Question 6
+  - Question 7
+  - Question 8
+    
 ## Etude théorique préparatoire
 
 #### Question 1 
@@ -43,7 +53,7 @@ _Expliquer en 4 lignes le rôle du protocole VRRP qui sera mis en place dans les
 #### Réponse 2
 VRRP (Virtual Router Redundancy Protocol) est un protocole dont le but est d'augmenter la disponibilité de la passerelle par défaut des hôtes d'un même réseau. Dans notre cas, il permet de définir une seule adresse IP virtuelle comme passerelle par défaut référençant nos deux routeurs pour les hôtes de notre réseau.
 
-#### Question 3 
+#### QuestQuestion 1n 3 
 _Expliquer le fonctionnement de VRRP qui permet aux machines A et B d’utiliser le
 « bon » routeur. Comment fonctionne ce mécanisme lorsque le routeur utilisé devient défaillant ?_
 
