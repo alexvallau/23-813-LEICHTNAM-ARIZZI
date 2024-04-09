@@ -1,3 +1,18 @@
+## PARTIE 3
+
+### SOMMAIRE
+- [Supervision et métrologie avec SNMP](#Supervision-et-métrologie-avec-SNMP)
+  - [Question 9](#Question-9)
+  - [Question 10](#Question-10)
+  - [Question 11](#Question-11)
+  - [Question 12](#Question-12)
+  - [Question 13](#Question-13)
+  - [Question 14](#Question-14)
+  - [Question 15](#Question-15)
+  - [Question 16](#Question-16)
+  - [Question 17](#Question-17)
+  - [Question 18](#Question-18)
+  - [Question 19](#Question-19)
 # Script bash de mesure de débit en SNMP
 
 Dans cette partie, nous allons développer un script bash récupérant, via le protocole SNMP, des informations sur les interfaces de nos routeurs. Nous nous limiterons  à la récupération du nombre d'octet en sortie de notre routeur R2. Avec ces données et un peu de bon sens, nous serons capable de déterminer le débit sortant de l'interface de notre routeur. 
