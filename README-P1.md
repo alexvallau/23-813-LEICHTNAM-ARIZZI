@@ -3,7 +3,7 @@
 
 ## PARTIE 1
 
-## SOMMAIRE
+### SOMMAIRE
 
 ## Etude théorique préparatoire
 
