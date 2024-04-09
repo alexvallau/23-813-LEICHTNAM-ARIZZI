@@ -286,7 +286,7 @@ Ce graphique montre la vitesse configurée pour différentes interfaces réseau.
 #### rate(ifOutOctets{job="snmp-exporter-cisco", instance="10.100.4.1"}[5m])
 ![Texte alternatif](./images/promql2.png "Titre de l'image")
 
-Le deuxième graphique représente le trafic sortant d'une interface spécifique, mesuré par la fonction rate(ifOutOctets[5m]) en octets par seconde. Cela aide à identifier les tendances du trafic et les pics potentiels qui pourraient affecter les performances réseau.
+Ce graphique représente le trafic sortant d'une interface spécifique, mesuré par la fonction rate(ifOutOctets[5m]) en octets par seconde. Cela aide à identifier les tendances du trafic et les pics potentiels qui pourraient affecter les performances réseau.
 
 
 ## Grafana
