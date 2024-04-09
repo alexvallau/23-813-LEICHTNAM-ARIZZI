@@ -3,7 +3,7 @@
 ### SOMMAIRE
 - [Script bash de mesure de débit en SNMP](#Script-bash-de-mesure-de-débit-en-SNMP)
   - [Question 20](#Question-9)
-  - [Récupération du compteur d’octets](#Récupération-du-compteur-d’octets)
+  - [Récupération du compteur d’octets](#Récupération-du-compteur-d-octets)
   - [Gestion de la date et stockage dans un fichier](#Gestion-de-la-date-et-stockage-dans-un-fichier)
   - [Lecture de la dernière ligne du fichier, calcul et enregistrement du débit](#Lecture-de-la-dernière-ligne-du-fichier,-calcul-et-enregistrement-du-débit)
   - [Gestion du fichier vide et gestion du rebouclage du compteur d'octets](#Gestion-du-fichier-vide-et-gestion-du-rebouclage-du-compteur-d'octets)
