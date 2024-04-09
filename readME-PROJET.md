@@ -1,4 +1,6 @@
+# Projet Prométhéus/grafana/exportateurs
 
+Dans le cadre de notre projet, il nous a été demandé de  déployer un outil de surveillance réseau. Cet outil devait être capable d'analyser plusieurs types de machines ainsi que plusieurs types de protocoles. Prométhéus, l'outil donc, sera le coeur de notre surveillance réseau en jouant plusieurs rôles. Il sera chargé, selon sa configuration, de faire des requêtes à ses différents exportateurs. À leurs tours, les exportateurs iront faire des requêtes aux différents noeuds(machine, routeur, switch etc..) et renverront les résultats à prométhéus. Prométhéus aura également un rôle de stockeur de données dans sa base PROMQL. Les possibilités visuelles de prométhéus restant assez maigres, il nous a été demandé d'utiliser grafana afin d'observer les données.
 
 ## Sommaire
 
@@ -36,13 +38,6 @@
   - [cAdvisor](#cadvisor-1)
   - [Node exporter](#node-exporter-1)
   - [SNMP exporter](#snmp-exporter-1)
-
-
-
-
-# Projet Prométhéus/grafana/exportateurs
-
-Dans le cadre de notre projet, il nous a été demandé de  déployer un outil de surveillance réseau. Cet outil devait être capable d'analyser plusieurs types de machines ainsi que plusieurs types de protocoles. Prométhéus, l'outil donc, sera le coeur de notre surveillance réseau en jouant plusieurs rôles. Il sera chargé, selon sa configuration, de faire des requêtes à ses différents exportateurs. À leurs tours, les exportateurs iront faire des requêtes aux différents noeuds(machine, routeur, switch etc..) et renverront les résultats à prométhéus. Prométhéus aura également un rôle de stockeur de données dans sa base PROMQL. Les possibilités visuelles de prométhéus restant assez maigres, il nous a été demandé d'utiliser grafana afin d'observer les données.
 
 ## Architecture de notre Dossier
 ``` PS
