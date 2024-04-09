@@ -3,6 +3,8 @@
 
 ## PARTIE 1
 
+## SOMMAIRE
+
 ## Etude théorique préparatoire
 
 #### Question 1 
