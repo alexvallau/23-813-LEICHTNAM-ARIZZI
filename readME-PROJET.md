@@ -47,10 +47,10 @@ C:.
 │   docker-compose.yml
 ├───grafana
 │       datasource.yml
-│
+│       grafana.conf
 └───prometheus
     │   prometheus.yml
-    │   prometheus.yml.old
+    │   
     │
     ├───blackbox
     │       blackbox.yml
