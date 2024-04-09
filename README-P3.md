@@ -1,19 +1,19 @@
 ## PARTIE 3
 
 ### SOMMAIRE
-- [Supervision et métrologie avec SNMP](#Supervision-et-métrologie-avec-SNMP)
-  - [Question 9](#Question-9)
-  - [Question 10](#Question-10)
-  - [Question 11](#Question-11)
-  - [Question 12](#Question-12)
-  - [Question 13](#Question-13)
-  - [Question 14](#Question-14)
-  - [Question 15](#Question-15)
-  - [Question 16](#Question-16)
-  - [Question 17](#Question-17)
-  - [Question 18](#Question-18)
-  - [Question 19](#Question-19)
-# Script bash de mesure de débit en SNMP
+- [Script bash de mesure de débit en SNMP](#Script-bash-de-mesure-de-débit-en-SNMP)
+  - [Question 20](#Question-9)
+  - [Récupération du compteur d’octets](#Récupération-du-compteur-d’octets)
+  - [Gestion de la date et stockage dans un fichier](#Gestion-de-la-date-et-stockage-dans-un-fichier)
+  - [Lecture de la dernière ligne du fichier, calcul et enregistrement du débit](#Lecture-de-la-dernière-ligne-du-fichier,-calcul-et-enregistrement-du-débit)
+  - [Gestion du fichier vide et gestion du rebouclage du compteur d'octets](#Gestion-du-fichier-vide-et-gestion-du-rebouclage-du-compteur-d'octets)
+  - [Question 21](#Question-21)
+  - [Question 22](#Question-22)
+  - [Question 23](#Question-23)
+  - [Script générique](#Script-générique)
+  
+    
+## Script bash de mesure de débit en SNMP
 
 Dans cette partie, nous allons développer un script bash récupérant, via le protocole SNMP, des informations sur les interfaces de nos routeurs. Nous nous limiterons  à la récupération du nombre d'octet en sortie de notre routeur R2. Avec ces données et un peu de bon sens, nous serons capable de déterminer le débit sortant de l'interface de notre routeur. 
 
@@ -49,7 +49,7 @@ value=$(snmpwalk -v2c -c "$community" "$agent_ip" "$oid" | awk '{print $NF}' )
 date=$(date +%s) #Nous renvoie
 echo "$date;$value">>filename
 ```
-### Lecture de la dernière ligne du fichier, calcul et enregistrement du débit.
+### Lecture de la dernière ligne du fichier, calcul et enregistrement du débit
 
 Afin de récupérer la dernière du fichier, nous avons utilisé:
 ``` bash
