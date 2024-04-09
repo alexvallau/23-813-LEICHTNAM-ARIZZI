@@ -5,7 +5,7 @@
   - [Question 20](#Question-20)
   - [Récupération du compteur d’octets](#Récupération-du-compteur-d'octets)
   - [Gestion de la date et stockage dans un fichier](#Gestion-de-la-date-et-stockage-dans-un-fichier)
-  - [Lecture de la dernière ligne du fichier, calcul et enregistrement du débit](#Lecture-de-la-dernière-ligne-du-fichier,-calcul-et-enregistrement-du-débit)
+  - [Lecture de la dernière ligne du fichier, calcul et enregistrement du débit](#Lecture-de-la-dernière-ligne-du-fichier-calcul-et-enregistrement-du-débit)
   - [Gestion du fichier vide et gestion du rebouclage du compteur d'octets](#Gestion-du-fichier-vide-et-gestion-du-rebouclage-du-compteur-d'octets)
   - [Question 21](#Question-21)
   - [Question 22](#Question-22)
