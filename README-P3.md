@@ -12,7 +12,7 @@ systemd plutôt que la fonction sleep._
 L'utilisation de Cron ou des timers systemd pour automatiser les mesures de débit réseau est préférable à la fonction sleep, car cela garantit une exécution périodique et fiable du script sans qu'il doive rester actif en permanence. Ces outils gèrent l'exécution des tâches en arrière-plan de manière efficace, permettant ainsi une meilleure gestion des ressources et assurant la continuité des mesures, même en cas de redémarrage du système ou d'interruptions du script.
 
 
-### 5.1 Récupération du compteur d’octets
+### Récupération du compteur d’octets
 
 ``` bash
 #!/bin/sh
@@ -25,7 +25,7 @@ echo "${value}"
 ```
 
 
-### 5.2 Gestion de la date et stockage dans un fichier
+### Gestion de la date et stockage dans un fichier
 ``` bash
 oid="1.3.6.1.2.1.31.1.1.1.6.1"
 agent_ip="10.100.4.2"
@@ -34,7 +34,7 @@ value=$(snmpwalk -v2c -c "$community" "$agent_ip" "$oid" | awk '{print $NF}' )
 date=$(date +%s) #Nous renvoie
 echo "$date;$value">>filename
 ```
-### 5.3 Lecture de la dernière ligne du fichier, calcul et enregistrement du débit.
+### Lecture de la dernière ligne du fichier, calcul et enregistrement du débit.
 
 Afin de récupérer la dernière du fichier, nous avons utilisé:
 ``` bash
@@ -46,7 +46,7 @@ last_line_date=$(echo "$last_line" | cut -d ";" -f 1)
 last_line_octet_value=$(echo "$last_line" | cut -d ";" -f 2)
 ```
 
-### 5.4 Gestion du fichier vide et gestion du rebouclage du compteur d'octets
+### Gestion du fichier vide et gestion du rebouclage du compteur d'octets
 
 Voici ce qui a été mis en place afin de vérifier si le fichier est vide:
 ```bash
@@ -135,7 +135,7 @@ de la machine sur laquelle le script s’exécute._
 ```
 L'adresse IP de la machine est 10.100.4.2.
 
-### 5.6 Script générique
+### Script générique
 
 Afin de rendre notre script complètement générique, nous avons ajouté les lignes suivantes:
 
