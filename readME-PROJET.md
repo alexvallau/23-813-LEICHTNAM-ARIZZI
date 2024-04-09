@@ -278,18 +278,15 @@ PromQL est le langage de requête de Prometheus, qui permet de récupérer et de
 
 Exemple de requete promql : 
 
-####ifHighSpeed{job="snmp-exporter-cisco"} 
+#### ifHighSpeed{job="snmp-exporter-cisco"} 
 ![Texte alternatif](./images/promql1.png "Titre de l'image")
 
 Ce graphique montre la vitesse configurée pour différentes interfaces réseau. La métrique ifHighSpeed indique la vitesse théorique maximale de chaque interface, ce qui est crucial pour évaluer la capacité du réseau.
 
-####rate(ifOutOctets{job="snmp-exporter-cisco", instance="10.100.4.1"}[5m])
+#### rate(ifOutOctets{job="snmp-exporter-cisco", instance="10.100.4.1"}[5m])
 ![Texte alternatif](./images/promql2.png "Titre de l'image")
 
 Le deuxième graphique représente le trafic sortant d'une interface spécifique, mesuré par la fonction rate(ifOutOctets[5m]) en octets par seconde. Cela aide à identifier les tendances du trafic et les pics potentiels qui pourraient affecter les performances réseau.
-
-
-
 
 
 ## Grafana
