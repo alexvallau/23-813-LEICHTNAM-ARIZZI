@@ -294,10 +294,11 @@ Nous ne détaillerons pas grand chose ici mise à part la déclaration des alert
 ### Alertes
 Nous avons créé des alertes à un seuil de 50 bits.
 Nous pouvons voir sur l'image ci-dessous, au niveau des pointillets verticaux les moments ou elles sont déclenchées.
-
+![Texte alternatif](./images/alerte.png "Titre de l'image")
 
 Une fois que ces alertes sont déclenchées, nous nous servons d'un serveur google smtp afin d'envoyer des mail d'alerte:
-
+![Texte alternatif](./images/alertemail.png "Titre de l'image")
+L'image est assez peu explicite mais il faut comprendre que C représente le nombre de bit atteint. Ici il est de 205 bit/s, d'ou l'alerte.
 ### Blackbox
 ![Texte alternatif](./images/BLACKBOX.png "Titre de l'image")
 
